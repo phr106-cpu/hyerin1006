@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>매개변수 기본값 설정하기</title>
+</head>
+<body>
+    <script>
+        let multi = (a,b=5,c=10) => {
+            return a*b+c;
+        }
+        let result = multi(5,10,20);
+        console.log(result);
+        result=multi(10,20); //c=20 기본값 사용
+        console.log(result);
+        result = multi(30); //b=5, c=10 기본값사용
+        console.log(result);
+    </script>
+</body>
+</html>

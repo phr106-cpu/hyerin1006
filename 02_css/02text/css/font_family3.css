@@ -1,0 +1,11 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Dongle&family=Nanum+Pen+Script&display=swap');
+.w_font1{
+    font-family: "Black Han Sans", sans-serif;
+}
+.w_font2{
+    font-family: "Nanum Pen Script", cursive;
+}
+.w_font3{
+    font-family: "Dongle", sans-serif;
+}

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>gsap 맛보기</title>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+    <link rel="stylesheet" href="css/style01.css">
+</head>
+
+<body>
+    <h1>GSAP 주요 기능 맛보기</h1>
+    <!-- 1. 기본 to/from/fromTo -->
+    <section class="fromTo">
+        <h2>1. to / from / fromTo</h2>
+        <div class="demo_area">
+            <div class="box box_to">to</div>
+            <div class="box box_from">from</div>
+            <div class="box box_from_to">fromTo</div>
+        </div>
+    </section>
+    <section>
+        <h2>2. 자주쓰는 옵션</h2>
+        <button type="button" id="btn_run">GO!</button>
+        <div class="demo_area">
+            <div class="dot"></div>
+        </div>
+    </section>
+    <section>
+        <h2>3. Stagger(스크롤시 착착착!)</h2>
+        <ul class="chips">
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+        </ul>
+    </section>
+    <section>
+        <h2>4.TimeLine 재생목록</h2>
+        <div class="demo_area scene">
+            <div class="card card1">1</div>
+            <div class="card card2">2</div>
+            <div class="card card3">3</div>
+        </div>
+    </section>
+    <section>
+        <h2>5.스타일/트랜스폼</h2>
+        <div class="demo_area">
+            <div class="hero">hello</div>
+        </div>
+    </section>
+    <section>
+        <h2>6.토글 애니메이션</h2>
+        <button type="button" id="btn_toggle">토글</button>
+        <div class="demo_area">
+            <div class="panel">panel</div>
+        </div>
+    </section>
+    <script>
+        //  플러그인 등록 (ScrollTrigger 사용하려면 무조건 등록)
+        gsap.registerPlugin(ScrollTrigger);
+
+        //1.to/from/fromTo 기본
+        //1.to : 지금 상태 -> 목표 상태
+        gsap.to('.box_to', {
+            x: 200, //x축으로 200px 이동
+            duration: 2, //2초동안 실행
+            ease: "power2.out", //속도 곡선
+        });
+
+        //2. from : 어디서 등장할래?
+        gsap.from('.box_from', {
+            x: -200,
+            opacity: 0.2,
+            duration: 1.5,
+        });
+
+        gsap.fromTo('.box_from_to', {
+            scale: 0,
+        }, { scale: 1.2, rotate: 360, duration: 1.5 });
+
+        //2.옵션 6총사 (버튼 클릭 이벤트)
+        document.getElementById('btn_run').addEventListener('click', () => {
+            gsap.to('.dot', {
+                x: 400,
+                doration: 2,
+                delay: 0.2,
+                ease: "bounce.out",
+                repeat: 1,
+                yoyo: true,
+            })
+        });
+
+        gsap.from('.chips li', {
+            y: 50,
+            opacity: 0,
+            ease: "power1.out",
+            stagger: 0.15, //요소들이 0.15초 간격으로 순서대로 진행
+            scrollTrigger: {
+                trigger: '.chips',
+                start: 'top 80%', //화면의 80%지점에서 시작
+                toggleActions: "play none none reverse",
+                // 내려올 때 실행, 올라가면 반대로
+            }
+        });
+
+        //4.TimeLine + scrollTrigger
+        const timeline_cards = gsap.timeline({
+            scrollTrigger: {
+                trigger: '.scene',
+                start: 'top 70%',
+                toggleActions: "play none none reverse",
+            }
+        });
+
+        timeline_cards.from('.card1', {
+            y: 60,
+            opacity: 0,
+            duration: 0.6,
+            ease: "back.out(1.4)",
+        }).from('.card2', {
+            y: 60,
+            opacity: 0,
+            duration: 0.6,
+            ease: "back.out(1.4)",
+        }, '<0.2').from('.card3', {
+            y: 60,
+            opacity: 0,
+            duration: 0.6,
+            ease: "back.out(1.4)",
+        }, '<0.2');
+
+
+        //5.스타일 변화
+        gsap.to('.hero', {
+            duration: 1.2,
+            backgroundColor: '#4caf50',
+            color: '#111',
+            scale: 1.2,
+            rotate: 10,
+            borderRadius: '30px',
+            ease: "expo.out",
+            repeat: -1,
+            yoyo: true,
+        });
+
+        //6.토글 애니메이션 (버튼 이벤트)
+        const panel_slide = gsap.to('.panel', {
+            x: 240,
+            duration: 0.5,
+            paused: true,
+            ease: "power2.inOut",
+        }).reverse(); //시작부터 역재생 상태로 세팅
+
+        document.getElementById('btn_toggle').addEventListener('click', () => {
+            //지금 상태 확인 -> 지금 상태를 반대로 바꾸기
+            panel_slide.reversed(!panel_slide.reversed());
+            //reversed 애니메이션 실행 방향 상태를 읽거나 바꾸기
+            //true : 지금 역재생 모드
+            //false : 지금 정방향 모드 
+            //slide.reversed(true) -> 강제로 역재생 
+            //slide.reversed(false) -> 강제로 정방향 재생 
+        });
+    </script>
+</body>
+
+</html>

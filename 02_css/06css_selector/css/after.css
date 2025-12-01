@@ -1,0 +1,157 @@
+@charset "utf-8";
+
+/* reset */
+*{margin: 0; padding: 0;}
+ul{list-style: none;}
+a{text-decoration: none; color: inherit;}
+.clear::after{
+    content: '';
+    display: block;
+    clear: both;
+}
+:root{font-size: 20px;}
+
+/* layout */
+header{
+    width: 1360px; 
+    margin: 0 auto; 
+    background: #ccc;
+    position: relative;
+    z-index: 10;
+}
+header h1{
+    float: left;
+    height: 70px;
+}
+header h1 a{
+    display: block;
+    height: 100%;
+}
+
+header nav{
+    float: right; 
+    background: palegoldenrod;
+    width: 1000px;
+}
+
+header nav>ul>li{
+    width: 20%; 
+    background: lightcoral;
+    float: left;
+    text-align: center;
+    position: relative;
+}
+header nav>ul>li>a{
+    display: block; 
+    height: 70px; 
+    line-height: 70px;
+}
+header nav>ul>li:hover>a{
+    background: yellowgreen; 
+    color: #fff;
+}
+header nav>ul>li>ul{
+    position: absolute; 
+    left: 0; top: 70px;
+    width: 100%; 
+    display: none;
+}
+header nav>ul>li:hover>ul{
+    display: block;
+}
+header nav>ul>li>ul>li{
+    background: lightsalmon;
+}
+header nav>ul>li>ul>li>a{
+    height: 60px; 
+    line-height: 60px;
+    display: block;
+}
+header nav>ul>li>ul>li:hover{
+    background: yellow;
+}
+
+.container{
+    width: 1360px; margin: 0 auto;
+    background: #aaa;
+    position: relative;
+}
+
+.container main{
+    width: 70%;
+    background: lavender;
+    float: left;
+}
+
+.container main .main_visual ul li{
+    width: 33.33%;
+    height: 500px;
+    background: red;
+    float: left;
+}
+.container main .main_visual ul li:nth-child(2){
+    background: blue;
+}
+
+.container main .main_visual ul li a{
+    display: block;
+    height: 100%;
+}
+.container main .notice h2{
+    font-size: 1.2rem;
+    font-weight: normal;
+    text-align: center;
+    padding-block: 20px;
+}
+.container main .notice ul{
+    width: 80%;
+    border: 1px solid #333;
+    margin: 0 auto;
+}
+.container main .notice ul li{
+    height: 80px; line-height: 80px;
+    border-bottom: 1px solid #333;
+}
+.container main .notice ul li:last-child{
+    border-bottom: 0;
+}
+.container main .notice ul li a{
+    display: block;
+    width: 100%; height: 100%;
+    box-sizing: border-box;
+    padding: 0 20px;
+    position: relative;
+}
+.container main .notice ul li a::before{
+    content: '';
+    width: 10px; height: 10px;
+    display: block;
+    background: lightcoral;
+    border-radius: 50%;
+    position: absolute; left: 5px; top: 35px;
+}
+.container main .notice ul li a strong{
+    font-size: 1.1rem;
+}
+.container main .notice ul li a span{
+    font-size: 0.8rem;
+    float: right;
+}
+
+.container aside{
+    width: 29%; height: 1000px;
+    background: lawngreen;
+    float: right;
+}
+
+footer{background: #bbb;}
+footer .copy{
+    width: 60%; height: 150px;
+    background: lightcoral;
+    float: left;
+}
+footer address{
+    width: 39%; height: 180px;
+    background: lightgoldenrodyellow;
+    float: right;
+}

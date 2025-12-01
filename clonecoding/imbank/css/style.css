@@ -1,0 +1,671 @@
+@charset "utf-8";
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css");
+
+:root {
+    --swiper-theme-color: #333;
+    --swiper-navigation-size: 12px;
+}
+body {
+    font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+}
+
+.shadow {
+    border-radius: 25px;
+    background: #fff;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.wrap {
+    width: 100%;
+    background: #f3f6f8;
+}
+
+.inner {
+    width: 1170px;
+    margin: 0 auto;
+}
+
+header {
+    background: #fff;
+}
+
+header .top {
+    display: flex;
+    justify-content: flex-end;
+    height: 40px;
+    align-items: flex-end;
+}
+
+header .top a {
+    padding-inline: 14px;
+    border-right: 1px solid #8d8d8d;
+    font-size: 14px;
+    line-height: 1;
+    color: #8d8d8d;
+}
+
+header .top a:last-child {
+    border-right: 0;
+    padding-right: 0;
+}
+
+header .bottom {
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav ul {
+    display: flex;
+    gap: 40px;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.right_info {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.search {
+    position: relative;
+}
+
+.search .srh_input {
+    font-size: 14px;
+    width: 214px;
+    height: 42px;
+    border: 1px solid #000;
+    border-radius: 44px;
+    background: #fff;
+    padding: 0 45px 2px 20px;
+}
+
+.search button {
+    position: absolute;
+    right: 10px;
+    top: 3px;
+    width: 30px;
+    height: 30px;
+    border: none;
+    background: none;
+    color: #333;
+    font-size: 20px;
+}
+
+.lang {
+    font-size: 18px;
+}
+
+.all_menu button {
+    border: 0;
+    background: transparent;
+    font-size: 20px;
+}
+
+main {
+    padding-block: 26px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.main_visual {
+    height: 378px;
+}
+
+.main_visual .swiper {
+    height: 100%;
+}
+
+.main_visual .swiper ul.swiper-wrapper {
+    height: 100%;
+}
+
+.main_visual .swiper ul.swiper-wrapper li {
+    height: 100%;
+    line-height: 1;
+    position: relative;
+}
+
+.main_visual .swiper ul.swiper-wrapper li .tit_con {
+    opacity: 0;
+    transition: 1s;
+    position: relative;
+    left: -300px;
+}
+
+.main_visual .swiper ul.swiper-wrapper li.swiper-slide-prev .tit_con {
+    left: -300px;
+    opacity: 0;
+}
+
+.main_visual .swiper ul.swiper-wrapper li.swiper-slide-active .tit_con {
+    left: 0;
+    opacity: 1;
+}
+
+.main_visual .swiper ul.swiper-wrapper li.swiper-slide-next .tit_con {
+    left: 300px;
+    opacity: 0;
+}
+
+.main_visual .swiper ul.swiper-wrapper li .tit {
+    width: 100%;
+    height: 100%;
+    padding: 81px 0 0 71px;
+    font-weight: 500;
+}
+.main_visual .swiper ul.swiper-wrapper li em{
+    font-size: 30px;
+}
+
+.main_visual .swiper ul.swiper-wrapper li .t1{
+    font-size: 54px;
+    transition-delay: .2s;
+}
+
+.main_visual .swiper ul.swiper-wrapper li .t2{
+    font-size: 22px;
+    line-height: 1.26;
+    color: #5f626a;
+    transition-delay: .4s;
+}
+
+.main_visual .swiper ul.swiper-wrapper li a{
+    padding: 5px 12px 5px 0;
+    font-size: 17px;
+    color: #006dde;
+    margin-top: 10px;
+    display: inline-flex;
+    transition-delay: .9s;
+
+}
+
+.main_visual .swiper ul.swiper-wrapper li .bg {
+    position: absolute;
+    opacity: 0;
+    right: -200px;
+    bottom: 0;
+    width: 579px;
+    height: 378px;
+    background: url(../img/ebz_dgb_sprite2023.png) no-repeat -400px -2100px;
+    transition: 1s;
+}
+
+.main_visual .swiper ul.swiper-wrapper li.swiper-slide-active .bg {
+    opacity: 1;
+    right: 0;
+}
+
+.main_visual .swiper ul.swiper-wrapper li.slide2 .bg {
+    background-position: -420px -1320px;
+}
+
+.main_visual .swiper ul.swiper-wrapper li.slide3 .bg {
+    background-position: -470px -230px;
+    width: 540px;
+    height: 368px;
+}
+
+.main_visual .swiper ul.swiper-wrapper li.slide4 .bg {
+    background-position: -470px -630px;
+    width: 456px;
+    height: 306px;
+    margin-right: 60px;
+    bottom: 30px;
+}
+
+.main_visual .swiper ul.swiper-wrapper li.slide5 .bg {
+    background-position: -410px -1720px;
+}
+
+.main_visual .swiper .btns{
+    position: absolute;
+    width: 146px;
+    left: 71px; bottom: 30px;
+    display: flex;
+    align-items: center;
+    z-index: 10;
+}
+
+.main_visual .swiper .btns .swiper-pagination{
+    position: static;
+    text-align: left;
+}
+
+.main_visual .swiper .btns i{
+    cursor: pointer;
+    font-size: 0.9rem;
+    padding: 3px;
+}
+
+.main_visual .swiper .btns i.fa-play{
+    font-size: .7rem;
+}
+
+.main_visual .swiper .btns .arrow{
+    position: relative;
+    width: 70px; height: 30px;
+}
+
+.quick {
+    height: 114px;
+    font-size: 25px;
+    font-weight: 600;
+}
+
+.quick ul {
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    align-items: center;
+    gap: 75px;
+}
+
+.quick ul li a:hover {
+    color: #006dde;
+}
+
+/* banner */
+.banner {
+    height: 134px;
+}
+
+.banner ul {
+    display: flex;
+    height: 100%;
+    justify-content: space-between;
+}
+
+.banner ul li {
+    width: 213px;
+    height: 100%;
+}
+
+.banner ul li:hover {
+    background-color: #006dde;
+    color: #fff;
+}
+
+.banner ul li a {
+    display: flex;
+    padding: 40px 0 0 20px;
+    height: 100%;
+}
+
+.banner ul li a .img_box {
+    width: 70px;
+    height: 46px;
+    background-image: url(../img/ebz_dgb_sprite2023.png);
+}
+
+.banner ul li:nth-child(1) a .img_box {
+    background-position: 0 -220px;
+    height: 64px;
+}
+
+.banner ul li:nth-child(2) a .img_box {
+    background-position: 0 -40px;
+}
+
+.banner ul li:nth-child(3) a .img_box {
+    background-position: -80px -40px;
+}
+
+.banner ul li:nth-child(4) a .img_box {
+    background-position: -160px -40px;
+}
+
+.banner ul li:nth-child(5) a .img_box {
+    background-position: -240px -40px;
+}
+
+.banner ul li a .txt_box strong {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.banner ul li a .txt_box p {
+    font-size: 16px;
+}
+
+/* con_bottom */
+.con_bottom {
+    height: 290px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.con_bottom .board_box {
+    width: 688px;
+    height: 100%;
+    position: relative;
+    padding: 108px 60px 50px 60px;
+}
+
+.con_bottom .board_box section h2 {
+    font-size: 20px;
+    color: #909090;
+    position: absolute;
+    left: 60px;
+    top: 58px;
+    cursor: pointer;
+}
+
+.con_bottom .board_box section.event_board h2 {
+    left: 136px;
+}
+
+.con_bottom .board_box section.active h2 {
+    color: #006dde;
+}
+
+.con_bottom .board_box section ul {
+    display: none;
+    width: 100%;
+    height: 140px;
+}
+
+.con_bottom .board_box section.active ul {
+    display: flex;
+}
+
+.con_bottom .board_box section.new_board ul {
+    flex-direction: column;
+}
+
+.con_bottom .board_box section.new_board ul li {
+    flex: 1;
+}
+
+.con_bottom .board_box section.new_board ul li a {
+    display: flex;
+    height: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.con_bottom .board_box section.new_board ul li a em {
+    font-size: 16px;
+    color: #000;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.con_bottom .board_box section.new_board ul li a:hover em {
+    text-decoration: underline;
+}
+
+.con_bottom .board_box section.new_board ul li a em::before {
+    content: '';
+    display: block;
+    width: 3px;
+    height: 3px;
+    background: #000;
+}
+
+.con_bottom .board_box section.new_board ul li a span {
+    font-size: 14px;
+    color: #666;
+}
+
+.con_bottom .board_box section.event_board ul {
+    justify-content: space-between;
+}
+
+.con_bottom .board_box section.event_board ul li a {
+    width: 180px;
+    height: 100%;
+    display: flex;
+    background: #ccc;
+}
+
+.con_bottom .board_box section a.more {
+    position: absolute;
+    right: 60px;
+    top: 52px;
+    font-size: 15px;
+    color: #666;
+    text-decoration: underline;
+    display: none;
+}
+
+.con_bottom .board_box section.active a.more {
+    display: block;
+}
+
+.con_bottom .app_box {
+    width: 456px;
+    height: 100%;
+    padding: 56px 60px 0 60px;
+}
+
+.con_bottom .app_box h2 {
+    margin-bottom: 26px;
+    font-size: 20px;
+    color: #07172a;
+}
+
+.con_bottom .app_box ul {
+    display: flex;
+    gap: 24px;
+    justify-content: center;
+    text-align: center;
+    font-size: 17px;
+    font-weight: 600;
+}
+
+.con_bottom .app_box ul li a::before {
+    content: '';
+    display: block;
+    width: 89px;
+    height: 89px;
+    background: url(../img/ebz_dgb_sprite2023.png) no-repeat 0 -100px;
+    margin-bottom: 16px;
+}
+
+.con_bottom .app_box ul li:nth-child(2) a::before {
+    background-position: -100px -100px;
+}
+
+.con_bottom .app_box ul li:nth-child(3) a::before {
+    background-position: -200px -100px;
+}
+
+/* footer */
+footer {
+    background: #fff;
+    padding: 40px 0;
+}
+
+footer ul.f_link {
+    display: flex;
+    font-size: 14px;
+    color: #42464a;
+    gap: 18px;
+    padding-left: 20px;
+}
+
+footer ul.f_link li:first-child {
+    columns: #111;
+    font-weight: 600;
+}
+
+footer .f_bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+footer .f_bottom .f_left .f_info {
+    width: 320px;
+    position: relative;
+}
+
+footer .f_bottom .f_left .f_info .item {
+    height: 60px;
+    background: transparent;
+    line-height: 56px;
+    display: flex;
+}
+
+footer .f_bottom .f_left .f_info .item strong {
+    font-size: 15px;
+    margin-right: 10px;
+    width: 70px;
+}
+
+footer .f_bottom .f_left .f_info .item span {
+    font-size: 17px;
+    color: #006dde;
+}
+
+footer .f_bottom .f_left .f_info>.item {
+    padding: 0 20px;
+}
+
+footer .f_bottom .f_left .f_info.active>.item {
+    border: 1px solid #d1d1d1;
+    border-top: 0;
+    border-radius: 0 0 8px 8px;
+}
+
+footer .f_bottom .f_left .f_info .btn_more {
+    position: absolute;
+    right: 0px;
+    top: 14px;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    background: none;
+    border: none;
+}
+
+footer .f_bottom .f_left .f_info .btn_more::before {
+    content: '';
+    display: block;
+    width: 12px;
+    height: 6px;
+    background: url(../img/ebz_dgb_sprite2023.png) no-repeat -90px 0;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+footer .f_bottom .f_left .f_info.active .btn_more::before {
+    background-position: -90px -10px;
+}
+
+footer .f_bottom .f_left .f_info ul {
+    position: absolute;
+    left: 0;
+    bottom: 59px;
+    width: 100%;
+    border-radius: 8px 8px 0 0;
+    border: 1px solid #d1d1d1;
+    background: #fff;
+    display: none;
+    padding: 0 20px;
+}
+
+footer .f_bottom .f_left .f_info.active ul {
+    display: block;
+}
+
+footer .f_bottom .f_left .f_info ul li {
+    border-bottom: 1px solid #d1d1d1;
+}
+
+footer .f_bottom .f_left .f_info ul li:last-child {
+    border-bottom: 0;
+}
+
+footer .f_bottom .f_right {
+    display: flex;
+    gap: 10px;
+}
+
+footer .f_bottom .f_right .select_menu {
+    display: inline-block;
+    position: relative;
+    width: 110px;
+    box-sizing: content-box;
+    font-size: 13px;
+    height: 36px;
+    letter-spacing: -1.5px;
+}
+
+footer .f_bottom .f_right .select_menu:last-child {
+    width: 136px;
+}
+
+footer .f_bottom .f_right .select_menu button {
+    background: #fff;
+    width: 100%;
+    text-align: left;
+    padding: 5px 10px;
+    border: 1px solid transparent;
+    cursor: pointer;
+}
+
+footer .f_bottom .f_right .select_menu button em {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+footer .f_bottom .f_right .select_menu button em::after {
+    content: '';
+    width: 12px;
+    height: 6px;
+    display: block;
+    background: url(../img/ebz_dgb_sprite2023.png) no-repeat -90px 0;
+}
+
+footer .f_bottom .f_right .select_menu.active button em::after {
+    background-position: -90px -10px;
+}
+
+footer .f_bottom .f_right .select_menu.active button {
+    border: 1px solid #d1d1d1;
+    border-top: 0;
+    border-radius: 0 0 8px 8px;
+}
+
+footer .f_bottom .f_right .select_menu ul {
+    position: absolute;
+    left: 0;
+    bottom: 36px;
+    background: #fff;
+    width: 100%;
+    border: 1px solid #d1d1d1;
+    display: none;
+    border-bottom: 0;
+    border-radius: 8px 8px 0 0;
+}
+
+footer .f_bottom .f_right .select_menu.active ul {
+    display: block;
+}
+
+footer .f_bottom .f_right .select_menu ul li {
+    padding: 5px 10px;
+}
+
+footer .f_bottom .f_right .select_menu ul li a:hover {
+    text-decoration: underline;
+}
+
+footer .f_copy p {
+    font-size: 15px;
+    color: #111;
+    padding-left: 20px;
+    display: flex;
+    align-items: center;
+}

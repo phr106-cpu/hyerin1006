@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>변수 스코프 - let const 예약어를 사용한 변수</title>
+</head>
+<body>
+    <script>
+        /* 
+        vG : var Global
+        lG : let Global
+        lF : let Function (함수 지역)
+        vF : var Function (함수 스코프)
+        lB / cB : let Block, const Block (블록 스코프)
+        autoG : 자동 전역
+        */
+
+        // 전역 스코프(Global Scope)
+        var vG=10;
+        let lG;
+
+        function testScope(){
+            vG = 100;
+            autoG=200; //자동 전역 변수
+            lG=300; 
+            let lF=400; //함수 지역 변수
+
+            if(true){
+                var vF=10;
+                let lB =20;
+                let lTim = 30;
+                const cB=40;
+            }
+
+            //블록 밖에서 출력
+            console.log(vG); //100-전역변수
+            console.log(autoG); //200-자동 전역 변수
+            console.log(lG);//300-전역변수
+            console.log(lF);//400-함수 지역변수
+            console.log(vF);//10-var ->함수 전체에서 접근 가능
+            //console.log(lB); //error 블록 스코프 (블록 안에서만 유효)
+            //console.log(lTim);
+            console.log(cB);//error 블록 스코프 (블록 안에서만 유효)
+        }
+        testScope();
+    </script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>if test</title>
+</head>
+<body>
+    <script>
+        const i = 2; //바뀌지않음! 
+        /* 
+        prompt로 숫자를 받아서 이프문 사용해서 짝수일때 짝수 홀수일때 홀수
+        document.write로 출력
+        */
+       let answer = Number(prompt('숫자를 입력하세요'));
+       let result;
+       if(answer%i==0){
+        result = '짝수'
+       }else{
+        result = '홀수'
+       }
+       document.write(result);
+    </script>
+</body>
+</html>

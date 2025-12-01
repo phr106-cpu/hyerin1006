@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>함수 선언과 호출 - 선언문</title>
+</head>
+
+<body>
+    <script>
+        //prompt로 이름 받아 오시고
+        let uName = prompt('이름을 입력하세요','변우석');
+        //prompt로 나이 받아 오시고
+        let uAge = prompt('나이를 입력하세요', 20);
+
+        //함수 printMsg(이름,나이) 선언
+        function printMsg(uName,uAge) {
+            document.write(`학생이름 : <b>${uName}</b><br>`);
+            document.write(`학생나이 : <b>${uAge}</b><br>`);
+        }
+        //콜 함수 부르기
+        printMsg(uName,uAge);
+    </script>
+</body>
+
+</html>

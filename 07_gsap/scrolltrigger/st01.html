@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GSAP제어 심화 + scrolltrigger</title>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+    <link rel="stylesheet" href="css/st01.css">
+    <script src="js/st01.js"></script>
+</head>
+
+<body>
+    <section>아래로 스크롤 해보세요</section>
+
+    <section class="demo">
+        <h2>Demo1 : scrolltrigger + label Jump</h2>
+        <div class="wrap">
+            <div class="box b1">1</div>
+            <div class="box b2">2</div>
+            <div class="box b3">3</div>
+            <div class="box b4">4</div>
+        </div>
+    </section>
+
+    <section class="demo2">
+        <h2>Demo2: Keyboard로 타임라인 제어</h2>
+        <div class="pane">hello</div>
+        <p>키보드 [p]play / [0]pause / [r]reverse</p>
+    </section>
+    <section class="outro">끝</section>
+    <div class="control_panel">
+        <p>🎹 단축키</p>
+        <ul>
+            <li>[1] → demo1 label2</li>
+            <li>[2] → demo1 label3</li>
+            <li>[P] → demo2 play</li>
+            <li>[O] → demo2 pause</li>
+            <li>[R] → demo2 reverse</li>
+        </ul>
+    </div>
+</body>
+
+</html>

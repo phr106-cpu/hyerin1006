@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>구조 분해 할당</title>
+  </head>
+  <body>
+    <script>
+      const arr = [1, 2, 3];
+      // let one =arr[0];
+      // let two =arr[1];
+      // let three =arr[2];
+      let [one, two, three] = arr;
+      console.log(one, two, three);
+
+      let person = {
+        name: "변우석",
+        age: 18,
+        location2: "서울",
+      };
+      let { name, age, location2 } = person;
+      console.log(name, age, location2);
+
+      function func({ nickname, level }) {
+        console.log(nickname, level);
+      }
+      let obj2 = {
+        nickname: "변우석",
+        level: 1,
+      };
+      func(obj2);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,44 @@
+@charset "UTF-8";
+*{margin: 0; padding: 0;}
+div{
+    width: 500px; height: 300px;
+    border: 1px solid #ccc;
+    margin: 10px;
+}
+.gra1{
+    background: linear-gradient(0deg, #EE9C9C 0%, #D8E8CD 46.46%, #53AD9B 98.8%);
+    background-image: url(../img/bg4.png);
+}
+.gra2{
+    background: linear-gradient(0deg, #DDE393 0%, #D8E8CD 46.46%, #5377AD 98.8%);
+}
+.gra3{
+    background: linear-gradient(110deg, #D84D4D 0.8%, #D8E8CD 48.9%, #A188DD 103.08%);
+}
+.gra4{
+    background: #ff2483;
+    background: radial-gradient(circle, rgba(255, 36, 131, 1) 0%, rgba(240, 229, 156, 1) 100%);
+}
+.gra5{
+    background: #77f7ae;
+    background: radial-gradient(circle, rgba(119, 247, 174, 1) 0%, rgba(246, 186, 247, 1) 100%);
+}
+.gra6{
+    background-image: repeating-linear-gradient(
+        to bottom, /* 가로 방향 선 right 세로 방향 선 bottom*/
+        red, /* 빨간선 시작 */
+        red 20px, /* 20px까지 빨간색 */
+        green 20px, /* 초록색 시작 */
+        green 40px /* 40px까지 초록색 */
+
+    );
+}
+.gra7{
+    background-image: repeating-linear-gradient(
+        to right,
+        pink,
+        pink 40px,
+        skyblue 40px,
+        skyblue 70px
+    );
+}

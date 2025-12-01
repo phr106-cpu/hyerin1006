@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>문서객체 생성하기</title>
+</head>
+
+<body>
+    <script>
+        function add() {
+            let header = document.createElement('h3'); //요소 노드 생성
+            let textNode = document.createTextNode('내이름은 박혜린 입니다');//텍스트 노드 생성
+            header.appendChild(textNode); //요소노드와 텍스트노드를 연결
+            // <h3>내이름은 박혜린 입니다</h3>
+            document.body.appendChild(header); //생성한 문서 객체를 body에 추가
+        }
+    </script>
+    <button type="button" onclick="add()">당신의 이름은 무엇입니까?</button>
+</body>
+
+</html>

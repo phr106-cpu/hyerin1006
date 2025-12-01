@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>forEach 메소드</title>
+</head>
+
+<body>
+    <script>
+        /* 
+    forEach() 메소드
+    - 배열의 각 요소를 순서대로 꺼내어 콜백함수 실행
+    - 매개변수 (item, index, array)
+      ① item  : 현재 요소 값
+      ② index : 현재 요소의 인덱스(번호)
+      ③ array : 배열 자체
+    - 반환값 없음 (단순 반복용)
+  */
+        let kdata = ['서울', '부산', '청주', '대구'];
+        //함수 정의 후 전달
+        function printArr(item, index) {
+            document.writeln(`배열데이터[${index}]: ${item}<br>`);
+        }
+        kdata.forEach(printArr);
+        document.write('<hr>');
+
+        //화살표 함수 사용
+        kdata.forEach((item, index) => {
+            console.log(`배열데이터[${index}]: ${item}`)
+        })
+
+        //화살표 함수 - item만 활용
+        kdata.forEach(item => {
+            document.write(item + '<br>');
+        })
+
+        //세번째 매개변수(배열 자체 활용)
+        kdata.forEach((value,i,arr)=>{
+            document.write(`현재 값: ${value}, 인덱스 ${i}, 전체 배열[${arr.join(' , ')}]<br>`);
+        })
+    </script>
+</body>
+
+</html>

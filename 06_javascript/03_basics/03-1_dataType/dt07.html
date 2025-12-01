@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>typeof 연상자를 사용하여 데이터 타입 확인하기</title>
+</head>
+<body>
+    <script>
+        let num; //변수값을 안 넣고 선언만 함 undefined
+        let obj = null; //객체 속성값이 없음
+
+        console.log(typeof 100); //number
+        console.log(typeof 10.5); //number
+        console.log(typeof '박혜린'); //string
+        console.log(typeof true); //boolean
+        console.log(typeof [1,2,3]); //object - 배열
+        console.log(typeof {name: '박혜린', age: 10}); //object - 객체
+        console.log(typeof num); //undefined
+        console.log(typeof obj); //object
+    </script>
+</body>
+</html>

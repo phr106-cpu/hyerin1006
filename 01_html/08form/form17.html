@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>웹 폼</title>
+    <style>
+    form fieldset ul li label em{
+        color: red;
+    }
+    form fieldset ul li label{
+        width: 130px;
+        font-size: 14px;
+        float: left;
+    }
+    ul{
+        list-style: none;
+    }
+</style>
+</head>
+<body>
+    <form>
+        <fieldset>
+            <legend>로그인</legend>
+
+            <label for="id">아이디</label>
+            <input type="text" id="id" size="10" autofocus>
+
+            <label for="pw">비밀번호</label>
+            <input type="password" id="pw" size="10">
+
+            <input type="submit" value="로그인">
+        </fieldset>
+
+        <fieldset>
+            <legend>가입하기</legend>
+            <ul>
+            <li>
+             <label for="id2">아이디<em>*</em></label>
+             <input type="text" id="id2" size="20" required> 
+            </li>
+
+            <li>
+             <label for="pw2">비밀번호<em>*</em></label>
+             <input type="password" id="pw2" size="20" required>
+            </li>
+
+            <li>
+             <label for="pw3">비밀번호 확인<em>*</em></label>
+             <input type="password" id="pw3"size="20" required>
+            </li>
+
+            <li>
+             <label for="name">이름<em>*</em></label>
+             <input type="text" id="name" size="20" required>
+            </li>
+
+            <li>
+             <label for="email">메일주소<em>*</em></label>
+             <input type="email" id="email" size="20" required>
+            </li>
+
+            <li>
+             <label for="tel">전화번호</label>
+             <input type="tel" id="tel" size="20">
+            </li>
+            </ul>
+        </fieldset>
+
+        <fieldset>
+            <legend>이지스퍼블리싱</legend>
+            <textarea cols="60" rows="5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas doloremque perspiciatis esse nesciunt explicabo exercitationem quibusdam dolorem consequatur, nam neque commodi culpa vel iste reiciendis blanditiis velit, id aperiam asperiores.</textarea>
+        </fieldset>
+
+        <fieldset>
+            <input type="submit" value="가입하기">
+            <input type="reset" value="다시쓰기">
+        </fieldset>
+    </form>
+</body>
+</html>

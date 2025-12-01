@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>반환값</title>
+</head>
+<body>
+    <script>
+        let result;
+        function add(name,n){
+            document.write(`${name}학생이 1부터 ${n}까지 덧셈 수행<br>`);
+            let sum = 0;
+            for(let i=1; i<=n; i++){
+                sum += i;
+            }
+            return sum;
+        }
+        result = add('송중기',50);
+        document.write(`결과:${result}<br>`);
+
+        //result 사용하고
+        /* 변우석학생이 1부터 1000까지 덧셈수행
+        결과 : 500500 */
+
+        result =add('변우석',1000)
+        document.write(`결과 : ${result}<br>`);
+
+        document.write('결과 : '+add('강호동',100)+'<br>');
+
+        //result 사용하지않고
+        /* 이영희학생이 1부터 50까지 덧셈수행
+        결과 : 1275 */
+
+        document.write('결과 :'+add('이영희',50));
+
+    </script>
+</body>
+</html>
+

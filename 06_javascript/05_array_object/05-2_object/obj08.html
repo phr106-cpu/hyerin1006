@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>객체 변수를 사용해 속성값 설정하기</title>
+</head>
+
+<body>
+    <script>
+        function add() {
+            let img = document.createElement('img');
+            img.src = 'https://image.news1.kr/system/photos/2025/9/3/7476719/high.jpg';
+            img.width = 100;
+            img.alt = '변우석'
+            document.body.appendChild(img);
+        }
+    </script>
+
+    <button type="button" onclick="add()">이미지 추가</button>
+</body>
+
+</html>

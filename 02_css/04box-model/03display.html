@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>display 속성</title>
+    <style>
+        *{margin: 0; padding: 0;}
+        img{width: 200px;}
+        div{
+            margin: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        #block img{display: block;}
+        #block img:nth-child(2){
+            display: none;
+            /* visibility: hidden; */
+        }
+        /* 불릿 없애고, 폰트 색상 검정색, 밑줄 없애기 */
+        ul{
+            width: 500px; margin: 0 auto;
+            list-style: none;
+        }
+        li{display: inline;}
+        a{   
+            color: black;
+            text-decoration: none;
+            background: gold;
+        }
+    </style>
+</head>
+<body>
+    <div id="inline">
+        <img src="https://img.vogue.co.kr/vogue/2024/11/style_6732c24d5eae6.jpg" alt="변우석">
+        <img src="https://img.vogue.co.kr/vogue/2024/11/style_6732c24d5eae6.jpg" alt="변우석">
+        <img src="https://img.vogue.co.kr/vogue/2024/11/style_6732c24d5eae6.jpg" alt="변우석">
+    </div>
+    <div id="block">
+        <img src="https://img.vogue.co.kr/vogue/2024/11/style_6732c24d5eae6.jpg" alt="변우석">
+        <img src="https://img.vogue.co.kr/vogue/2024/11/style_6732c24d5eae6.jpg" alt="변우석">
+        <img src="https://img.vogue.co.kr/vogue/2024/11/style_6732c24d5eae6.jpg" alt="변우석">
+
+    </div>
+
+    <nav>
+        <ul>
+            <li><a href="">메뉴1</a></li>
+            <li><a href="">메뉴2</a></li>
+            <li><a href="">메뉴3</a></li>
+            <li><a href="">메뉴4</a></li>
+        </ul>
+    </nav>
+</body>
+</html>

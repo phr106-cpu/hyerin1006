@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>며칠 지났는지 알아보기</title>
+    <style>
+        body {
+            font-family: "Pretendard", sans-serif;
+            border: solid 5px cornflowerblue;
+            display: flex;
+            flex-direction: column; 
+            justify-content: center;
+            align-items: center;
+            height: 300px;
+            width: 500px;
+        }
+
+        .dayinput_wrap {
+            font-weight: 500;
+        }
+
+
+        label {
+            display: block;
+            margin: 10px 0;
+        }
+
+        #accent {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: violet;
+        }
+
+        #date {
+            font-size: 1.2rem;
+            color: black;
+        }
+
+        button {
+            background-color: aquamarine;
+            padding: 1% 1.5%;
+            border: solid #fff;
+            border-radius: 30%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="dayinput_wrap">
+        <!-- 처음 만난 날 입력 -->
+        <label>
+            처음 만난 날 (예: 2025-09-05)
+            <input type="text" id="dayinput_text" placeholder="-포함해서 입력(YYYY-MM-DD)">
+        </label>
+
+        <!-- 체크하면 오늘을 1일로 계산 -->
+        <label>
+            오늘부터 1일
+            <input type="checkbox" id="checkone">
+        </label>
+
+        <!-- 특정 기념일 입력 -->
+        <label>
+            기념일 계산 (예:100)
+            <input type="text" id="numtext" placeholder="숫자만 입력">
+        </label>
+
+        <!-- 버튼 클릭 시 계산을 실행 -->
+        <button type="button" onclick="insertInput()">입력</button>
+    </div>
+
+    <!-- 결과 표시 영역 -->
+    <p id="accent"></p>
+    <p id="date"></p>
+
+    <script>
+        //오늘날짜
+        let now = new Date();
+        let toNow = now.getTime(); //오늘 날짜를 밀리초로 변환
+        const day = 1000 * 60 * 60 * 24; //1일(24시간)을 밀리초로 환산
+        const checkbox = document.getElementById('checkone');
+
+        let numtext; //사용자가 입력한 기념일 숫자
+        let toFirst; //처음 만난 날을 밀리초로 변환한 값
+
+        // 입력 버튼 클릭시 실행되는 함수
+        function insertInput() {
+            //입력값 가져오기
+            let dayInputText = document.getElementById('dayinput_text').value;
+            numtext = document.getElementById('numtext').value;
+
+            //처음 만난 날을 Date 객체로 변환
+            let firstDay = new Date(dayInputText);
+            toFirst = firstDay.getTime(); //밀리초로 변환
+
+            //경과 시간(오늘 - 처음 만난 날)
+            let passedTime = toNow - toFirst;
+
+            //일 단위로 변환
+            let passedDay;
+            if (checkbox.checked) { // [오늘부터 1일] 체크한 경우 : +1일
+                passedDay = Math.round(passedTime / day) + 1;
+            } else {
+                passedDay = Math.round(passedTime / day);
+            }
+            //며칠 지났는지 출력
+            document.getElementById('accent').innerHTML = `함께한지 <b>${passedDay}일</b>`
+
+            calcDate(numtext);
+        }
+
+        //기념일 날짜 계산 함수
+        function calcDate(a) {
+            // 처음 만난 날 + (기념일 * 하루)
+            let future = toFirst + a * day;
+            let sumDay = new Date(future);
+
+            //년 월 일 추출
+            let year = sumDay.getFullYear();
+            let month = sumDay.getMonth() + 1;
+            let date = sumDay.getDate();
+
+            //오늘부터 1일 체크 시 하루 보정
+            if (checkbox.checked) {
+                date = sumDay.getDate() - 1;
+            }
+
+            //결과 출력
+            document.getElementById('date').innerHTML = ` ${a}일 기념일 : ${year}년 ${month}월 ${date}일`;
+        }
+    </script>
+</body>
+
+</html>

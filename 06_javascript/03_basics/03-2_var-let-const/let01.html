@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>변수 선언과 사용법</title>
+</head>
+<body>
+    <script>
+        /* 
+            ecma6문법
+            var는 동일한 변수를 중복해서 선언할 수 있지만
+            let은 이미 선언한 변수를 중복해서 선언할 수 없다.
+            앞으로 배울 제어문이나 함수의 블록{}에서도 차이점이 있다
+        */
+
+        let box; //box라는 이름의 변수 선언
+        document.write(box + '<br>');
+        box = '변우석'; //변우석을 box변수에 할당
+        document.write(box + '<br>');
+
+        let num1 = 10; //num1이라는 변수를 선언과 동시에 값을 할당
+        document.write(num1 + '<br>');
+
+        let nickName = '율쌤';
+        /* 
+            단어 두개 조합으로 식별자를 만들때
+            두번째 단어의 첫글자를 대문자로 표기 - 카멜표기법
+        */
+        alert(nickName);
+        /* 
+            변수명, 함수명 등은 식별자라 함
+            식별자 생성 규칙
+            1. 키워드는 사용하지 않음
+            2. 특수문자는 _와 $만 허용
+            3. 숫자로 시작하면 안됨
+            4. 공백은 입력하면 안됨
+            nick_name
+        */
+    </script>
+</body>
+</html>

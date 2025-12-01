@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>position:sticky</title>
+    <style>
+        *{margin: 0; padding: 0;}
+        html{height: 200%; line-height: 1.6;}
+        header{
+            background: deeppink;
+            padding: 32px; color: #fff; opacity: .7;
+            z-index: 10;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        ul{list-style: none; display: flex; gap: 16px;}
+        li{font-size: 18px; font-weight: bold;}
+        main{padding: 32px;}
+
+        @media screen and (max-width:1200px) {
+            header{
+                position: sticky;
+                top: -32px;
+            }
+        }
+
+        .container{
+            width: 700px; height: 250px;
+            position: relative;
+        }
+        .container div{
+            width: 250px; height: 250px;
+            border-radius: 50%;
+            position: absolute;
+            top: 0;
+        }
+        .left-circle{
+            background: linear-gradient(orange,red);
+            left: 0;
+        }
+        .container .center-box{
+            width: 350px; border-radius: 45px;
+            z-index: 2;
+            border: 1px solid rgba(0,0,0,0.1);
+            left: 50%;
+            transform: translatex(-50%);
+            backdrop-filter: blur(10px);
+            /* 배경을 흐리게 만듦 - 유리창처럼 뿌옇게 표현 */
+        }
+        .right-circle{
+            background: linear-gradient(skyblue,blue);
+            right: 0;
+        }
+        
+    </style>
+</head>
+<body>
+    <header>
+    <h1>로고</h1>
+    <nav>
+      <ul>
+        <li>메뉴1</li>
+        <li>메뉴2</li>
+        <li>메뉴3</li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <h1>position: sticky</h1>
+    <p>이용할 수 있는 <code>position: sticky</code>라고 불리우는 또 다른 위치잡기 값이 있습니다. 이것은 다른 위치잡기보다 다소 새로운 것입니다. 이것은 기본적으로 상대
+      위치잡기와 고정 위치잡기가 혼합된 하이브리드로서, 위치잡기 요소가 특정 임계점에(예로 뷰포트의 상단으로부터 10px) 스크롤될 때까지 상대 위치잡기처럼 행동할 수 있다가 그 뒤에 위치가
+      고정됩니다. 예를 들어, 탐색 막대가 특정 지점까지 페이지와 함께 스크롤한 다음 페이지 상단에 흡착되도록 사용할 수 있습니다.</p>
+    <pre>
+    .positioned {position: sticky;
+                top: 30px;
+                left: 30px;}  
+    </pre>
+    <p><code>position: sticky</code>의 일반적 사용례기도 하고 흥미로운 사용례는 스크롤링하다 제목에 도달하면 서로 다른 제목이 페이지의 맨 위에 흡착되는 색인 페이지를 만드는
+      것입니다. 이런 사례에 대한 마크업은 다음과 같은 모습일 수 있습니다:</p>
+  <table border="1" cellpadding="8" cellspacing="0">
+  <thead>
+    <tr>
+      <th>조건</th>
+      <th>설명</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1️⃣ <code>top</code>, <code>left</code>, <code>right</code>, <code>bottom</code> 중 하나 이상 지정</td>
+      <td>예: <code>top: 0</code>을 지정해야 스크롤 시 위에 고정됩니다.</td>
+    </tr>
+    <tr>
+      <td>2️⃣ 부모 요소에 <code>overflow: hidden / scroll / auto</code> 가 <strong>없어야 함</strong></td>
+      <td>부모에 <code>overflow</code>가 설정되어 있으면 sticky가 무시됩니다. 특히 <code>overflow: hidden</code>이 흔한 원인입니다.</td>
+    </tr>
+    <tr>
+      <td>3️⃣ sticky 요소의 부모(조상 포함)가 <strong>스크롤 컨테이너</strong>일 경우, 그 범위 안에서만 sticky가 작동</td>
+      <td>예: <code>div</code>가 <code>overflow: auto</code>인 경우, 해당 <code>div</code> 안에서만 고정됩니다.</td>
+    </tr>
+    <tr>
+      <td>4️⃣ <code>display: table-*</code>, <code>inline</code> 요소에는 작동하지 않음</td>
+      <td><code>display: block</code>이나 <code>flex</code>, <code>grid</code> 요소에서 사용해야 합니다.</td>
+    </tr>
+    <tr>
+      <td>5️⃣ sticky 요소의 높이 + <code>top</code> 값이 <strong>스크롤 영역보다 작아야 함</strong></td>
+      <td>너무 큰 sticky 요소는 고정 위치에 도달하지 못할 수 있음.</td>
+    </tr>
+  </tbody>
+</table>
+    </main>
+
+  <div class="container">
+    <div class="left-circle"></div>
+    <div class="center-box"></div>
+    <div class="right-circle"></div>
+  </div>
+  <table border="1" cellpadding="8" cellspacing="0">
+  <thead>
+    <tr>
+      <th>필터 함수</th>
+      <th>설명</th>
+      <th>예시 값</th>
+      <th>효과</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>blur()</code></td>
+      <td>배경을 흐릿하게 만듭니다.</td>
+      <td><code>blur(10px)</code></td>
+      <td>유리창처럼 뿌옇게 표현됨</td>
+    </tr>
+    <tr>
+      <td><code>brightness()</code></td>
+      <td>배경의 밝기를 조절합니다.</td>
+      <td><code>brightness(1.5)</code></td>
+      <td>1보다 크면 더 밝게, 1보다 작으면 어둡게</td>
+    </tr>
+    <tr>
+      <td><code>contrast()</code></td>
+      <td>배경의 대비를 조절합니다.</td>
+      <td><code>contrast(200%)</code></td>
+      <td>이미지의 명암을 극대화</td>
+    </tr>
+    <tr>
+      <td><code>grayscale()</code></td>
+      <td>회색조로 전환합니다.</td>
+      <td><code>grayscale(100%)</code></td>
+      <td>흑백 효과</td>
+    </tr>
+    <tr>
+      <td><code>hue-rotate()</code></td>
+      <td>색상을 회전시킵니다.</td>
+      <td><code>hue-rotate(90deg)</code></td>
+      <td>색상 자체가 다른 색으로 변함</td>
+    </tr>
+    <tr>
+      <td><code>invert()</code></td>
+      <td>색상을 반전시킵니다.</td>
+      <td><code>invert(100%)</code></td>
+      <td>밝은 배경 → 어두운 배경</td>
+    </tr>
+    <tr>
+      <td><code>opacity()</code></td>
+      <td>배경의 투명도를 조절합니다.</td>
+      <td><code>opacity(0.5)</code></td>
+      <td>0 = 완전 투명, 1 = 불투명</td>
+    </tr>
+    <tr>
+      <td><code>saturate()</code></td>
+      <td>채도를 조절합니다.</td>
+      <td><code>saturate(150%)</code></td>
+      <td>강렬한 색감 or 흑백 조절</td>
+    </tr>
+    <tr>
+      <td><code>sepia()</code></td>
+      <td>세피아 톤으로 변환합니다.</td>
+      <td><code>sepia(100%)</code></td>
+      <td>빈티지 필름 느낌</td>
+    </tr>
+    <tr>
+      <td><code>none</code></td>
+      <td>필터 효과 제거</td>
+      <td><code>none</code></td>
+      <td>기본 상태</td>
+    </tr>
+  </tbody>
+</table>
+</body>
+</html>

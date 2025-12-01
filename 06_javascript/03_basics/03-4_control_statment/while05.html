@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p.blue{color: blue;}
+        p.red{color: red;}
+    </style>
+</head>
+<body>
+    <!-- <p class="blue">20</p>
+    <p class="red">19</p> -->
+    <script>
+        //20~10 사이의 수 찍기 - 짝수 blue / 홀수 red
+        let x = 20;
+        while(x>=10){
+            if(x%2==0){document.write(`<p class="blue">${x}</p>`)} 
+            else{document.write(`<p class="red">${x}</p>`)} ;
+            // (x%2==0) ? document.write(`<p class="blue">${x}</p>`) : document.write(`<p class="red">${x}</p>`)
+            x--;
+        }
+    </script>
+</body>
+</html>

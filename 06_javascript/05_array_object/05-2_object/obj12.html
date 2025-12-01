@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String 객체</title>
+</head>
+
+<body>
+    <script>
+        let str = 'Javascript';
+        console.log(str.charAt(3));
+        console.log(str.indexOf('a'));
+        console.log(str.indexOf('k')); //-1
+        console.log(str.lastIndexOf('a'));
+        console.log(str.includes('script'));
+        console.log(str.includes('aaa'));
+
+        str = 'http://naver.com';
+        console.log(str.substring(0, 4));//start인덱스,end인덱스-1
+        console.log(str.substr(7, 5)); //start인덱스,count(개수)-안넣으면 끝까지
+
+        str = ' removeblank ';
+        console.log(str.trim());
+
+        str = 'LowerCase';
+        console.log(str.toLowerCase());
+        console.log(str.toUpperCase());
+
+        str = 10;
+        str = String(str) + 10;
+        console.log(str);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>z-index</title>
+    <!-- z-index는 무조건 포지션이 있어야 먹음 -->
+    <style>
+        .wrap{
+            width: 1000px; height: 1000px;
+            background: rgba(0,255,255,.5);
+            position: absolute;
+            left: 50%; top: 0;
+            margin-left: -500px;
+        }
+        .box{
+            width: 100px; height: 100px;
+            background: hotpink;
+            text-align: center; line-height: 100px;
+            position: absolute;
+        }
+        .box1{
+            left: 50px; top: 50px; 
+            background: yellow;
+            z-index: 3;}
+        .box2{left: 60px; top: 60px; background: green;}
+        .box3{
+            left: 70px; top:70px; 
+            background: blue;
+            z-index: 2;
+        }
+        .box4{
+            background: red;
+            left: 10px; top: 10px;
+            z-index: -1;
+        }
+        .box5{
+            left: 90px; top: 90px;
+            background: lightgreen;
+            z-index: 100;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="box box1">1</div>
+        <div class="box box2">2</div>
+        <div class="box box3">3</div>
+        <div class="box box4">4</div>
+        <div class="box box5">5</div>
+
+    </div>
+</body>
+</html>

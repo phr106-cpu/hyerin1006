@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>삼항 조건 연산자</title>
+</head>
+<body>
+    <script>
+        //prompt로 숫자를 받아와서 num 변수에 넣고
+        //result변수에 num을 퍼센트 계산해서 넣고
+        //삼항 조건 연산자 사용
+        //commet변수 사용
+        //num은 짝수입니다 , 홀수입니다
+        //document.write() -> h2
+        let num = number(prompt('숫자를 입력해주세요'));
+        let result = num % 2;
+        let commet = (result===0) ? `${num}은(는) 짝수입니다.` : `${num}은(는) 홀수입니다.`;
+        // let comment = result ? `${num}은(는) 홀수입니다.` : `${num}은(는) 짝수입니다.`
+        document.write(`<h2>${comment}</h2>`);
+    </script>
+</body>
+</html>

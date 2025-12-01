@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let arrA = [10, 20, 30];
+      let arrB = [...arrA, 40, 50, 60];
+      console.log(arrB); // [10, 20, 30, 40, 50, 60]
+
+      let objA = { a: 1, b: 2 };
+      let objB = { ...objA, c: 3, d: 4 };
+      console.log(objB);
+    </script>
+  </body>
+</html>

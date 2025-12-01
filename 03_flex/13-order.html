@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>order</title>
+    <link rel="stylesheet" href="default.css">
+    <style>
+        .flex-container{display: flex;}
+        .flex-item:nth-child(1){
+            order: 3;
+        }
+        .flex-item:nth-child(2){
+             order: 2;
+        }
+        .flex-item:nth-child(3){
+            order: -3;
+        }
+        /* 배치순서 : 각 아이템들의 시각적 나열 순서를 결정하는 속성
+        숫자값이 들어가며, 작은 숫자일 수록 먼저 배치됨. 음수 가능.
+        접극성 측면 고려하기 */
+    </style>
+</head>
+<body>
+    <div class="flex-container">
+    <div class="flex-item">AAAAAAAAAAAA</div>
+    <div class="flex-item">BBB</div>
+    <div class="flex-item">CCCCCCCCCC</div>
+  </div>
+</body>
+</html>

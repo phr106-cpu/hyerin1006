@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>배열</title>
+</head>
+<body>
+    <script>
+        /* 
+            배열을 객체로 생성해서 
+            (for in문으로 출력) - 함수로 
+            좋아하는 연예인 5명
+            배열데이터[0] : 송중기 - alert로
+        */
+        
+        let arr = new Array('송중기','변우석','차은우','원빈','김선호');
+        function insertArr(){
+            for(let i in arr){
+                arr[i]=prompt(`좋아하는 연예인을 입력하세요 ${Number(i)+1}`);
+            }
+        }
+        let printArr=()=>{
+            insertArr();
+            for(let i in arr){
+            alert(`배열데이터[${i}] : ${arr[i]}`);
+        }
+    }
+        
+    </script>
+    <button type="button" onclick="printArr();">연예인</button>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>마우스 이벤트 예제</title>
+</head>
+<body>
+    <button id="btn">클릭해보세요</button>
+    <script>
+        const btn = document.getElementById('btn');
+        // 1. 기본적인 마우스 이벤트 (사용자가 직접 마우스를 클릭했을 때 실행)
+        btn.addEventListener('click',(e)=> {
+            console.log('버튼이 클릭됨',e);
+            //e -> 이벤트객체 (발생한 이벤트의 정보: 위치, 대상, 타입 등)
+        })
+
+        //2.프로그래밍적으로 이벤트를 직접 발생 시키기
+        //Event 생성자(new Event())를 사용
+
+        const clickEvent = new Event('click',{
+            bubbles:true, //이벤트가 부모 요소까지 전파되도록 할 지 여부
+            cancelable:true //preventDefault() 동작을 허용할 지 여부 
+        })
+        //3. 일정 시간 뒤에 강제로 버튼을 클릭한 것처럼 이벤트 발생시키기
+        setTimeout(()=>{
+            console.log('js에서 강제로 클릭 이벤트 발생');
+            btn.dispatchEvent(clickEvent);
+            //dispatchEvent -> 해당 요소에서 이벤트를 실행시키는 함수
+        },2000);
+
+        //다른 마우스 이벤트
+        btn.addEventListener('mouseover', (e)=>{
+            console.log('버튼 위에 마우스 올라옴',e);
+        })
+    </script>
+</body>
+</html>

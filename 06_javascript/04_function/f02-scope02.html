@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>변수 스코프 - var 예약어를 사용한 변수</title>
+</head>
+<body>
+    <script>
+        var sum = 0; //전역변수 선언
+
+        function addNumber(){
+            var localResult; //지역변수 - 함수 안에서만 유효
+            sum = 10+20; //전역변수 sum값 변경
+            autoResult = 10*20; //var,let,const 없이 선언 -> 자동 전역변수 (암묵적 호이스팅)
+            localResult = 10*20; //지역변수 localResult값 변경
+        }
+
+        addNumber(); //함수 호출
+        console.log(sum); //30 -> 전연변수 sum이 변경됨
+        console.log(autoResult); //함수 안에서 키워드 없이 선언 -> 호이스팅되어 전역 변수처럼 동작 200
+        console.log(localResult);// 오류 - 함수 내부에서만 유효한 지역변수
+
+        //전역 변수: 어디서든 접근 가능
+        //지역 변수: 함수 안에서만 사용 가능
+        //자동 전역 변수: var/let/const 없이 대입 시 생기는 전역 변수 (autoResult) -> 호이스팅처럼 전역 공간에 등록되므로 지양
+    </script>
+</body>
+</html>

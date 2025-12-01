@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>border-radius</title>
+    <style>
+        div{
+            width: 300px; height: 200px;
+            margin: 20px; display: inline-block;
+            background: rgba(0,255,0,0.1);
+        }
+        .round{
+            border-radius: 20px;
+            border: 2px solid red;
+            border-radius: 0 20px 30px 40px;
+            /* 0px,0%는 그냥 0 이라고 써도 됨 */
+            border-bottom-left-radius: 0;
+        }
+        #bg{
+            border-radius: 0 30px;
+            background: url(https://www.esquirekorea.co.kr/resources/online/online_image/2025/04/30/275aa371-b718-4f3c-8ea1-ebe5800c9a35.png)
+            no-repeat center/cover;
+            border: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="round"></div>
+    <div class="round" id="bg"></div>
+</body>
+</html>

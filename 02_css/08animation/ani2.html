@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>animation</title>
+    <style>
+        div{width: 100px; height: 100px; }
+        .box1{
+            background-color: blueviolet;
+            border: 1px solid #000;
+            animation-name: shape;
+            animation-duration: 2s;
+            animation-iteration-count: 3;
+        }
+        .box2{
+            background-color: crimson;
+            border: 1px solid blue;
+            animation: rotate 3s 2s infinite;
+            /* rotate라는 이름꺼 3초 동안에 2초 딜레이 무한으로 */
+        }
+
+        @keyframes shape {
+            0%{border-radius: 0;}
+            30%{border-radius: 50%;}
+            100%{border-radius: 20px;}
+        }
+        @keyframes rotate {
+            from{transform: rotate(0);}
+            to{transform: rotate(45deg);}
+        }
+    </style>
+</head>
+<body>
+    <div class="box1"></div>
+    <div class="box2"></div>
+</body>
+</html>

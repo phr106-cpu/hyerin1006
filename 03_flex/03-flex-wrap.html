@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flex-wrap</title>
+    <link rel="stylesheet" href="default.css">
+    <style>
+        .flex-container{
+            display: flex;
+            width: 700px;
+            flex-wrap: nowrap; /* 기본값 : 줄바꿈을 하지 않음. 넘치면 빠져나감 */
+            flex-wrap: wrap; /* 줄바꿈을 함. float이나 inline-block으로 배치한 요소들과 비슷하게 동작 */
+            flex-wrap: wrap-reverse;
+            /* 줄바꿈을 하는데 아이템을 역순으로 배치 */
+        }
+    </style>
+</head>
+<body>
+    <div class="flex-container">
+    <div class="flex-item">AAAAAAAAAAAAAAAAAAAAAA</div>
+    <div class="flex-item">BBBBBBBBBBBBBBBBBBBB</div>
+    <div class="flex-item">CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC</div>
+  </div>
+</body>
+</html>

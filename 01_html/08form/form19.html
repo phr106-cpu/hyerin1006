@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form</title>
+</head>
+<body>
+    <form>
+        <fieldset>
+            <legend>type 속성</legend>
+
+                <p><label>아이디 : <input type="text" placeholder="아이디를 입력하세요"></label></p>
+                <p><label>비밀번호 : <input type="password"></label></p>
+                <p><label>검색 : <input type="search"></label></p>
+                <p><label>이메일 : <input type="email"></label></p>
+                <p><label>전화번호 : <input type="tel"></label></p>
+                <p><label>컬러선택 : <input type="color" value="#cccccc"></label></p>
+                <p><label>수량 : <input type="number" min="1" max="10" value="1"></label></p>
+
+                <p>
+                 <label for="a">만족도</label>
+                 <input type="range" id="a" min="1" max="10" value="1"> 
+                </p>         
+                
+                <p>
+                 <label for="yes">예</label>
+                 <input type="radio" id="yes" value="yes" name="subject" checked>
+                 <label for="no">아니오</label>
+                 <input type="radio" id="no" name="subject" value="no">
+                </p>
+
+                <p>
+                 <label><input type="checkbox" value="html"> html</label>
+                 <label><input type="checkbox" value="css"> css</label>
+                </p>
+
+                <p><input type="submit" value="전송"></p>
+                <p><input type="reset" value="취소"></p>
+                <p><input type="button" value="확인"></p>
+                <p><input type="image" src="./login_btn.png" alt="login"></p>
+                <p><input type="file"></p>
+
+            </p>
+        </fieldset>
+    </form>
+</body>
+</html>

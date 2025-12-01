@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>inline-block</title>
+    <style>
+        *{margin: 0; padding: 0;}
+        nav{
+            width: 80%; 
+            height: 60px; 
+            background: #069; 
+            margin-inline: auto;
+        }
+        nav ul{list-style-type: none;}
+        nav ul li{
+            background: khaki;
+            width: 100px;
+            display: inline-block;
+            text-align: center;
+            margin: 20px;
+            color: #fff;
+        }
+        nav ul li a{
+            text-decoration: none;
+            color: inherit; /* inherit: 부모(li)로부터 컬러 속성 받는다는 뜻 */
+            background: #099;
+            width: 100%;
+            display: inline-block;
+        }
+        nav ul li a:hover{
+            color: #000;
+            background: #fff;
+            text-decoration: underline;
+        }
+        .none{
+            background: pink;
+            display: none;
+        }
+        .a{
+            background: yellow; 
+            width: 50%; height: 50px;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="#">메뉴1</a></li>
+            <li><a href="#">메뉴2</a></li>
+            <li><a href="#">메뉴3</a></li>
+            <li><a href="#">메뉴4</a></li>
+            <li><a href="#">메뉴5</a></li>
+        </ul>
+    </nav>
+    <div class="none">none</div>
+    <div class="a"></div>
+</body>
+</html>

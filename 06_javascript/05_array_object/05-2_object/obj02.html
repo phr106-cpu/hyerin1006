@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>속성(property)와 메서드(method)</title>
+</head>
+<body>
+    <script>
+        let student = {
+            name : '박혜린',
+            age : 29,
+            introduce: function(){
+                return `안녕하세요, 저는 ${this.name}, ${this.age}살 입니다.`
+            },
+        }
+        console.log(student.name); //점 표기법 -> '박혜린'
+        console.log(student['age']); // 대괄호 표기법 -> 29
+        console.log(student.introduce());//메소드
+    </script>
+</body>
+</html>

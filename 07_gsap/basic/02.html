@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GSAP Timeline 종합 실습</title>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+    <link rel="stylesheet" href="css/style02.css">
+    <script src="js/gsap02.js"></script>
+</head>
+
+<body>
+    <h1>GSAP Timeline 종합 실습</h1>
+
+    <section>
+        <h2>1.add,set,addPause</h2>
+        <button type="button" id="btn_next">다음으로</button>
+        <div class="bar"></div>
+    </section>
+    <section>
+        <h2>2. play/pause/reverse/seek/progress/timeScale</h2>
+        <div class="panel">HELLO</div>
+        <div class="ctrls">
+            <button data-act="play">▶</button>
+            <button data-act="pause">⏸</button>
+            <button data-act="rev">⏪</button>
+            <button data-act="fast">⏩ 2x</button>
+            <button data-act="seek1">⏱ 1초로</button>
+            <button data-act="half">50%</button>
+        </div>
+    </section>
+    <section>
+        <h2>3.repeat,yoyo,콜백</h2>
+        <div class="repeat_area">
+            <div class="ball"></div>
+        </div>
+    </section>
+    <section>
+        <h2>4.마스터 타임라인 (중첩 재사용)</h2>
+        <div class="row2">
+            <div class="card c1">A</div>
+            <div class="card c2">B</div>
+            <div class="card c3">C</div>
+        </div>
+    </section>
+    <section>
+        <h2>5. defaults / eventCallback</h2>
+        <div class="chips2">
+            <span>🍒</span><span>🍑</span><span>🍍</span><span>🍉</span>
+        </div>
+    </section>
+    <section>
+        <h2>6.상태 토글 패턴</h2>
+        <button type="button" id="toggle2">메뉴 열고 닫기</button>
+        <nav class="menu">menu</nav>
+    </section>
+</body>
+
+</html>

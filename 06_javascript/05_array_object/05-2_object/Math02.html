@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>발표 순서 정하기</title>
+</head>
+<body>
+    <script>
+        let uiuxClass = [
+      '권명진', '김가경', '김도연', '김미화', '김민경',
+      '김새록', '김세연', '김재현', '김혜영',
+      '류근호', '문수정', '박두리', '박소은',
+      '박혜린', '박희선', '백승주',
+      '안지수', '양동화', '이동욱', '이민영', '장영인',
+      '조이랑', '최우정', '함성희', '홍승지'
+    ];
+    let random = [];
+    let len = uiuxClass.length;
+
+    for(let i=0; i<len; i++){
+        random[i]=Math.floor(Math.random()*len);
+        for(let j=0; j<i;j++){
+            if(random[i]==random[j]){ //중복제거
+                i--;
+                break;
+            }
+        }
+    }
+    function docu(){
+        for(let i=0; i<len; i++){
+            alert(`(${i+1})${uiuxClass[random[i]]}`);
+            document.write(`(${i+1})${uiuxClass[random[i]]}<br>`)
+        }
+    }
+    </script>
+    <button type="button" onclick="docu()">랜덤버튼</button>
+</body>
+</html>

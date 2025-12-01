@@ -1,0 +1,13 @@
+@charset "utf-8";
+@font-face {
+    font-family: 'trana';
+    src: local('trana'),
+    url(../font/trana.eot),
+    url(../font/trana.woff) format('woff'),
+    url(../font/trana.ttf) format('truetype');
+}
+
+p{
+    font-size: 30px;
+}
+.t_font{font-family: 'trana';}

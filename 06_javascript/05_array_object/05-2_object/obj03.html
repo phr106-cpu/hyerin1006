@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자동차 객체 생성하기</title>
+</head>
+<body>
+    <p id="carname"></p>
+    <p id="carcolor"></p>
+    <p id="carspeed"></p>
+    <script>
+        let car = {
+            name:'HyerinCar',
+            speed:50,
+            color:'white',
+            start:function(){
+                return this.speed + 10;
+            },
+        }
+
+        document.getElementById('carname').textContent = car.name;
+
+        //carcolor에 white []
+        document.getElementById('carcolor').textContent=car['color'];
+        
+        //carspeed에 60
+        document.getElementById('carspeed').textContent=car.start();
+    </script>
+</body>
+</html>

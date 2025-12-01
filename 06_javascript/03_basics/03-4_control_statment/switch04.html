@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>switch</title>
+</head>
+<body>
+    <script>
+        /* 사용자에게 월을 입력받아(숫자) 
+            (3,4,5)월은 봄
+            (6,7,8)월은 여름
+            (9,10,11)월은 가을
+            (12,1,2)월은 겨울
+            그외에는 잘못입력 하셨습니다.
+            document.write()로 찍어주세요        
+        */
+       let text;
+       let month = Number(prompt('월을 입력해주세요'));
+        switch(month){
+        case 3:
+        case 4:
+        case 5:
+        text = '봄';
+            break;
+        case 6:
+        case 7:
+        case 8:
+        text = '여름';
+            break;
+        case 9:
+        case 10:
+        case 11:
+        text = '가을';
+            break;
+        case 12:
+        case 1:
+        case 2:
+        text = '겨울';
+            break;
+        default : text = '없는 계절';
+       }
+      document.writeln(`${month}월은 ${text}입니다`);
+
+    </script>
+</body>
+</html>

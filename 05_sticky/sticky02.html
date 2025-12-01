@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sticky</title>
+    <style>
+        *{margin: 0; padding: 0; box-sizing: border-box;}
+        header{width: 1200px; height: 100px; background: #ccc;
+        margin: 0 auto;}
+        .container{
+            width: 1200px; margin: 0 auto;
+            background: yellow;
+            display: flex;
+            justify-content: space-between;
+        }
+        .sticky{
+            width: 20%; height: 100vh; 
+            background: pink;
+            position: sticky; top: 0;
+            border: 10px solid red;
+        }
+        .contents{
+            width: 75%; height: 3000px;
+            background: lavender;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            align-content: flex-start;
+        }
+        .contents .con5{flex-grow: 1;}
+        .contents div {
+            width: 45%; height: 500px;
+            border: 5px solid blue;
+        }
+        footer{
+            width: 1200px; margin: 0 auto;
+            height: 80px; background: skyblue;
+        }
+    </style>
+</head>
+<body>
+    <header>header</header>
+    <div class="container">
+        <div class="sticky">sticky</div>
+        <div class="contents">
+            <div class="con1">con1</div>
+            <div class="con2">con2</div>
+            <div class="con3">con3</div>
+            <div class="con4">con4</div>
+            <div class="con5">con5</div>
+        </div><!-- //.contents -->
+    </div><!-- //.container -->
+    <footer>footer</footer>
+</body>
+</html>

@@ -1,0 +1,70 @@
+@charset "utf-8";
+
+/* reset */
+* {margin: 0; padding: 0;}
+/* 일단 전체 다 0으로 맞추고 시작 */
+ul{list-style: none;}
+a{text-decoration: none; color: inherit/* : 부모색깔 상속 */;}
+.clearfix::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+/* layout */
+.warp{
+    width: 1320px; margin: 0 auto;
+}
+header{
+    width: 100%;/* or width값 안줘도 됨, px로하면 고칠게 많아짐 */
+    height: 100px; 
+    background: #aaa;
+}
+nav{
+    width: 100%;/* 부모한텐 웬만하면 height값 안 주는게 좋음*/
+} 
+nav ul{
+    width: 100%;/* 위에 말했던 것처럼 이 값은 줘도 안줘도 ㅇㅋ */
+}
+nav ul li{
+    width: 25%; float: left; 
+    border-right: 1px solid #fff;
+    box-sizing: border-box;
+}
+nav ul li:last-child{
+    border-right: 0;
+}
+nav ul li a{
+    width: 100%; height: 40px; 
+    background: pink;
+    display: block;
+    text-align: center;
+    line-height: 40px;
+    }
+
+    main{
+        width: 100%; background: red;
+    }
+    main section{
+        width: 70%; /* height: 500px */;
+        background: yellowgreen;
+        float: left;
+    }
+    main section article{
+        width: 49%; height: 150px;
+        background: gold;
+        float: left;
+    }
+    main section article:last-child{
+        float: right;
+    }
+    main aside{
+        width: 28%; height: 500px;
+        background: #ddd;
+        float: right;
+    }
+
+    footer{
+        height: 100px;
+        background: blue;
+    }

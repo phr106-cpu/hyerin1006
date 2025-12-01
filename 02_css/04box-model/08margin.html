@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>margin</title>
+    <style>
+        *{margin: 0; padding: 0;}
+        div{
+            width: 200px; height: 100px;
+            background: #0094ff;
+            text-align: center;
+            line-height: 100px;
+        }
+        .box1{
+            margin: 30px 50px 30px 50px;
+            margin: 30px 50px; /* 위아래 왼쪽오른쪽 */
+        }
+        .box2{
+            margin: 30px 50px 70px 100px;
+            /* 위 오른쪽 밑 왼쪽 */
+        }
+        .box3{
+            margin: 30px 5px 50px 5px;
+            margin: 30px 5px 50px;
+            /* 위 왼쪽오른쪽 아래 */
+        }
+        .box4{
+            margin: 30px 30px 30px 30px;
+            margin: 30px;
+            /* 두개 같은말임 */
+            margin-left: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1">박스1</div>
+    <div class="box2">박스2</div>
+    <div class="box3">박스3</div>
+    <div class="box4">박스4</div>
+</body>
+</html>

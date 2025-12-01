@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flex-grow</title>
+    <link rel="stylesheet" href="default.css">
+    <style>
+        .flex-container{display: flex; height: 100px;}
+        /* 
+         flex-grow는 아이템이 flex-basis의 값보다 커질 수 있는지를 결정하는 속성
+         flex-basis를 *제외한 여백 부분*을 flow-grow에 지정된 숫자의 비율로 나누어 가짐
+         기본값이 0 
+         컨테이너에 남는 공간이 있을 때 그 남는 공간을 어떻게 나눌지.(비율)
+         */
+        .flex-item{flex-grow: 2;}
+        .flex-item:nth-child(2){flex-grow: 1;}
+    </style>
+</head>
+<body>
+    <div class="flex-container">
+      <div class="flex-item">AAAAAAAAAAAAAA</div>
+      <div class="flex-item">BBB</div>
+      <div class="flex-item">CCCCCCCCCCCC</div>
+    </div>
+</body>
+</html>

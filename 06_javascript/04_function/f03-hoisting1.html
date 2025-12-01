@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>함수 선언 방식 3종 - 선언문</title>
+</head>
+<body>
+    <script>
+        //전역 변수
+        let text1 = '함수 선언 전 호출';
+        let text2 = '함수 선언 후 호출';
+        printMsg(text1); //함수 선언 전 이지만 호출 가능
+
+        //함수 선언문은 전체가 호이스팅 되므로 선언 전에도 호출 가능
+        function printMsg(msg){
+            console.log('함수 호출 메시지:'+msg);
+        }
+        //정상호출
+        printMsg(text2);
+        printMsg('불러보자');
+    </script>
+</body>
+</html>

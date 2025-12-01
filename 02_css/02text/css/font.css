@@ -1,0 +1,16 @@
+@charset "utf-8";
+@font-face {
+    font-family: 'CookieRun';
+    src: url(../font/CookieRun_Regular.woff) format('woff');
+    font-weight: 400;
+}
+@font-face {
+    font-family: 'CookieRun';
+    src: url(../font/CookieRun_Bold.woff) format('woff');
+    font-weight: 700;
+}
+@font-face {
+    font-family: 'CookieRun';
+    src: url(../font/CookieRun_Black.woff) format('woff');
+    font-weight: 900;
+}

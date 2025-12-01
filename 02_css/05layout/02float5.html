@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>layout</title>
+    <style>
+        *{margin: 0; padding: 0; box-sizing: border-box;}
+        body{font-size: 30px;}
+        .container{
+            width: 1080px;
+            margin: 0 auto;
+        }
+        .clearfix::after{
+            content:'';
+            display: block;
+            clear: both;
+        }
+        nav{background: lemonchiffon; height: 100px; 
+            border: 2px solid #333;}
+            .contents{
+                background: #ccc;
+                margin-block: 10px;
+            }
+            header{
+                border: 2px solid #333;
+                background: lemonchiffon;
+                width: 250px;
+                height: 500px;
+                float: left;
+            }
+            .con1{               
+                border: 2px solid #333;
+                background: lemonchiffon;
+                width: 250px;
+                height: 500px;
+                float: left;
+                margin-left: 10px;
+            }
+            .con2{                
+                border: 2px solid #333;
+                background: lemonchiffon;  
+                width: 560px;
+                height: 500px;
+                float: right;
+            }
+            footer{
+                border: 2px solid #333;
+                background: lemonchiffon;
+                height: 80px;
+            }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <nav class="container">nav</nav>
+        <div class="container contents clearfix">
+            <header>header</header>
+            <div class="con1">con1</div>
+            <div class="con2">con2</div>
+        </div><!-- //.contents -->
+        <footer>
+            <div class="container">footer</div>
+        </footer>
+    </div><!-- //.wrap -->
+</body>
+</html>

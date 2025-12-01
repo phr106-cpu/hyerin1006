@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이미지 태그</title>
+    <style>
+        body{
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <!-- 
+    img 태그의 속성
+    src : 이미지 파일 경로
+         웹 문서 *파일의 위치를 기준*으로 이미지 경로 지정 (상대경로)
+         서버에 파일이 올라가 있는 *확실한 주소*가 있다면 사용 가능 (절대경로)
+    alt : 대체 텍스트
+          화면 낭독기가 읽어줌
+          이미지를 표시할 수 없는 상황에 대체텍스트 노출
+    -->
+
+    <!-- images라는 하위 폴더에 이미지 파일이 있다면 하위 폴더까지 같이 적용 -->
+
+    <!-- ./ : 현재 위치 -->
+    <img src="./images/02.png" alt="변우석">
+    <img src="./images/01.webp" alt="변우석">
+
+    <!-- html과 이미지 파일이 같은 폴더에 있다면 src속성에 파일 이름만 적용 -->
+    <img src="./img01.jpg" alt="변우석">
+    <img src="./img02.jpg" alt="변우석2">
+
+    <!-- 웹 사이트에 있는 이미지도 주소를 알아내어 src속성에 사용할 수 있다. 절대 경로 -->
+    <img src="https://cdn.woman.chosun.com/news/photo/202406/116529_129441_60.jpg" alt="변우석">
+
+    <!-- 상위 폴더로 가기 : ../-->
+     <img src="../1.gif" alt="움짤">
+
+     <img src="" alt="엑박">
+</body>
+</html>

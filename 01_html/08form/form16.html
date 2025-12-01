@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>button</title>
+    <style>
+        #login_btn{
+            background-color: transparent;/* 배경색 투명 */
+            border: none; /* 보더 없애기 (바깥 선) */
+            cursor: pointer;/* 커서를 포인터로 */
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <input type="text"><br>
+        <input type="submit" value="전송">
+        <button type="submit">전송</button>
+        <input type="reset" value="다시입력">
+        <button type="reset">다시입력</button>
+        <input type="button" value="새탭열기" onclick="window.open()">
+        <button type="button" onclick="window.open()">새탭열기</button>
+
+        <input type="image" src="./login_btn.png" alt="login">
+        <button type="submit" id="login_btn"><img src="./login_btn.png" alt="login"></button>
+    </form>
+</body>
+</html>

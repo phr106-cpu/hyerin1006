@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM 요소에 접근하기</title>
+</head>
+
+<body>
+    <div class="heading"></div>
+    <div id="bright"></div>
+    <img src="https://talkimg.imbc.com/TVianUpload/tvian/TViews/image/2025/09/04/e42c5234-20d1-489a-ac27-8a5717e07742.jpg"
+        alt="변우석">
+    <div id="small_pic">
+        <img src="https://talkimg.imbc.com/TVianUpload/tvian/TViews/image/2025/09/04/e42c5234-20d1-489a-ac27-8a5717e07742.jpg"
+            alt="변우석">
+        <img src="https://talkimg.imbc.com/TVianUpload/tvian/TViews/image/2025/09/04/e42c5234-20d1-489a-ac27-8a5717e07742.jpg"
+            alt="변우석">
+        <img src="https://talkimg.imbc.com/TVianUpload/tvian/TViews/image/2025/09/04/e42c5234-20d1-489a-ac27-8a5717e07742.jpg"
+            alt="변우석">
+    </div>
+    <script>
+        document.getElementById('bright').innerHTML = '<h2>변우석</h2>';
+        document.querySelector('.heading').innerHTML = `<strong>배고파요</strong>`;
+        document.getElementsByTagName('img')[0].setAttribute('width', 100);
+        let arr = document.querySelectorAll('#small_pic >img');
+        console.log(arr[0].width = 100);
+    </script>
+</body>
+
+</html>

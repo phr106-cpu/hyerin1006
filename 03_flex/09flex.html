@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flex</title>
+    <link rel="stylesheet" href="default.css">
+    <style>
+        .flex-container{display: flex; height: 500px;}
+            /* width: 1500px;*/
+        /* flex-grow flex-shrink flex-basis */
+        .flex-item{
+            flex: 1 1 0;
+            /*flex: 1; 
+            위에 두개 같은 말임 */
+            /* basis가 0이니까 본래 사이즈는 무시하고 걍 비율만 맞춤. 
+            비율 맞춰야되서 사이즈 알아서 바뀜 그게 싫으면 basis 0을 하지 말아야해*/
+        }
+        .flex-item:nth-child(1){
+            /* flex: 1 1 auto; */
+            /* flex: 1 auto; */
+            flex: 1;
+        }
+        .flex-item:nth-child(2){
+            flex: 3;
+        }
+        .flex-item:nth-child(3){flex: 1;}
+    </style>
+</head>
+<body>
+    <div class="flex-container">
+        <div class="flex-item">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum possimus et voluptas repudiandae consectetur dolorem nostrum natus, quae iure repellendus eveniet consequuntur, odit nisi est aliquid, suscipit nesciunt. Iure, ad!</p>
+        </div>
+        <div class="flex-item">bb</div>
+        <div class="flex-item">ccc</div>
+    </div>
+</body>
+</html>

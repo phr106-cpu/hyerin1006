@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>오브젝트-객체</title>
+</head>
+<body>
+    <p id="upspeed"></p>
+    <p id="downspeed"></p>
+    <script>
+        //car 객체
+         //name->'Sonata' /speed ->50 / color ->white 
+         //speedUp() ->speed +10  
+         //speedDown() ->speed-10
+         let car = {
+            name: 'Sonata',
+            speed : 50,
+            color:'white',
+            speedUp: function(){
+                return this.speed +10;
+            },
+            speedDown: function(){
+                return this.speed -10;
+            }
+         };
+         
+         //upspeed에 속도증가 : 60
+        document.getElementById('upspeed').textContent= `속도증가 : ${car.speedUp()}`;
+
+         //downspeed에 속도감소 : 40
+         document.getElementById('downspeed').textContent=`속도감소 : ${car.speedDown()}`;
+    </script>
+</body>
+</html>
