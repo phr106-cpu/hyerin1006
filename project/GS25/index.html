@@ -1,31 +1,243 @@
 <!DOCTYPE html>
 <html lang="ko">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="description" content="GS25사이트 리뉴얼">
-    <meta name="keywords" content="GS25,HTMl, CSS, JavaScript">
-    <meta name="author" content="박혜린">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="GS25사이트 리뉴얼" />
+    <meta name="keywords" content="GS25,HTMl, CSS, JavaScript" />
+    <meta name="author" content="박혜린" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>GS25</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/main_style.css">
-    <link rel="stylesheet" href="css/media.css">
-    <script src="https://kit.fontawesome.com/672e368b20.js" crossorigin="anonymous"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/main_style.css" />
+    <link rel="stylesheet" href="css/media.css" />
+    <script
+      src="https://kit.fontawesome.com/672e368b20.js"
+      crossorigin="anonymous"
+    ></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="js/main.js" defer></script>
-</head>
+  </head>
 
-<body>
-<div class="wrap">
-    <header>
-        <div class="inner">
-            <h1><a href="#"><img src="" alt=""></a></h1>
+  <body>
+    <div class="wrap">
+      <header>
+        <img
+          src="../GS25/images/top.png"
+          alt="GS25 Header"
+          class="header_img"
+        />
+        <button class="menu_btn">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </header>
+      <!-- Banner Section -->
+      <section class="banner">
+        <div class="swiper bannerSwiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <img src="../GS25/images/main_ad.png" alt="banner1" />
+            </div>
+            <!-- //.swiper-slide -->
+            <div class="swiper-slide">
+              <img src="../GS25/images/main_ad1.png" alt="banner1" />
+            </div>
+            <!-- //.swiper-slide -->
+            <div class="swiper-slide">
+              <img src="../GS25/images/main_ad3.png" alt="banner1" />
+            </div>
+            <!-- //.swiper-slide -->
+            <div class="swiper-slide">
+              <img src="../GS25/images/main_ad4.png" alt="banner1" />
+            </div>
+            <!-- //.swiper-slide -->
+          </div>
+          <!-- //.swiper-wrapper -->
+          <div class="swiper-pagination"></div>
         </div>
-    </header>
-</div>
-</body>
+        <!-- //.swiper bannerSwiper -->
+      </section>
+      <!-- //.banner -->
 
+      <!-- Product Section -->
+      <section class="product">
+        <div class="product_container">
+          <div class="product_top">
+            <h2 class="product_title">이건 어때요?</h2>
+          </div>
+          <!-- //.product_top -->
+
+          <div class="product_swiper_wrapper">
+            <div class="swiper productSwiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <div class="product_slide_wrapper">
+                    <div class="product_card">
+                      <img
+                        src="../GS25/images/section1/대파크림치즈팝콘.png"
+                        alt="상품1"
+                      />
+                      <div class="product_txt">
+                        <p class="product_name">던킨)대파크림치즈팝콘</p>
+                        <p class="product_price">1,750원</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="product_slide_wrapper">
+                    <div class="product_card">
+                      <img
+                        src="../GS25/images/section1/모찌롤.png"
+                        alt="상품2"
+                      />
+                      <div class="product_txt">
+                        <p class="product_name">서울우유)우유크림모찌롤</p>
+                        <p class="product_price">3,800원</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="product_slide_wrapper">
+                    <div class="product_card">
+                      <img
+                        src="../GS25/images/section1/탱글파스타.png"
+                        alt="상품3"
+                      />
+                      <div class="product_txt">
+                        <p class="product_name">삼양)탱글머쉬룸파스타</p>
+                        <p class="product_price">2,500원</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="product_slide_wrapper">
+                    <div class="product_card">
+                      <img
+                        src="../GS25/images/section1/아망추.png"
+                        alt="상품4"
+                      />
+                      <div class="product_txt">
+                        <p class="product_name">아망추(아이스티&망고)하이볼</p>
+                        <p class="product_price">4,500원</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="product_slide_wrapper">
+                    <div class="product_card">
+                      <img
+                        src="../GS25/images/section1/아이돌샌드위치.png"
+                        alt="상품5"
+                      />
+                      <div class="product_txt">
+                        <p class="product_name">New아이돌인기샌드위치</p>
+                        <p class="product_price">3,000원</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="product_slide_wrapper">
+                    <div class="product_card">
+                      <img src="../GS25/images/section1/불닭.png" alt="상품6" />
+                      <div class="product_txt">
+                        <p class="product_name">삼양)까르보불닭납작당면</p>
+                        <p class="product_price">3,800원</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="product_slide_wrapper">
+                    <div class="product_card">
+                      <img
+                        src="../GS25/images/section1/꼬북칩.png"
+                        alt="상품7"
+                      />
+                      <div class="product_txt">
+                        <p class="product_name">오리온)꼬북칩카라멜팝콘</p>
+                        <p class="product_price">1,700원</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="product_slide_wrapper">
+                    <div class="product_card">
+                      <img
+                        src="../GS25/images/section1/순후추닭강정.png"
+                        alt="상품8"
+                      />
+                      <div class="product_txt">
+                        <p class="product_name">오뚜기)순후추닭강정</p>
+                        <p class="product_price">5,600원</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="product_slide_wrapper">
+                    <div class="product_card">
+                      <img
+                        src="../GS25/images/section1/새우바.png"
+                        alt="상품9"
+                      />
+                      <div class="product_txt">
+                        <p class="product_name">쿠캣)더블새우맛어묵바</p>
+                        <p class="product_price">2,900원</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- //.swiper-wrapper -->
+              <div class="swiper-pagination"></div>
+            </div>
+            <!-- //.swiper productSwiper -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+          </div>
+          <!-- //.product_swiper_wrapper -->
+        </div>
+        <!-- //.product_container -->
+      </section>
+      <!-- //.product -->
+      <!-- Search Section -->
+      <section class="search">
+        <div class="search_container">
+          <div class="search_left">
+            <div class="search_top_txt">
+              <h2 class="search_title">우리 동네 GS25<br />어디있나요?</h2>
+              <p class="search_subtitle">근처 GS25를 찾아보세요!</p>
+            </div>
+
+            <div class="search_box">
+              <input
+                type="text"
+                class="search_input"
+                placeholder="점포명 또는 00동을 입력해주세요!"
+              />
+              <button class="search_btn">검색</button>
+            </div>
+          </div>
+          <div class="search_right">
+            <img
+              src="../GS25/images/search_img.png"
+              alt="search_img"
+              class="search_img"
+            />
+          </div>
+        </div>
+      </section>
+    </div>
+    <!-- //.wrap -->
+  </body>
 </html>
