@@ -95,3 +95,34 @@ promoTabs.forEach((tab) => {
     }
   });
 });
+// Footer Accordion
+document.addEventListener("DOMContentLoaded", function () {
+  const accordionItems = document.querySelectorAll(".accordion_item");
+
+  accordionItems.forEach((item) => {
+    const btn = item.querySelector(".accordion_btn");
+
+    btn.addEventListener("click", function (e) {
+      e.preventDefault();
+
+      // 다른 아코디언 닫기
+      accordionItems.forEach((otherItem) => {
+        if (otherItem !== item && otherItem.classList.contains("active")) {
+          otherItem.classList.remove("active");
+        }
+      });
+
+      // 현재 아코디언 토글
+      item.classList.toggle("active");
+    });
+  });
+
+  // 외부 클릭시 닫기
+  document.addEventListener("click", function (e) {
+    if (!e.target.closest(".accordion_item")) {
+      accordionItems.forEach((item) => {
+        item.classList.remove("active");
+      });
+    }
+  });
+});

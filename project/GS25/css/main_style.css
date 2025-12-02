@@ -1,4 +1,6 @@
 @charset "utf-8";
+
+/* ========== Font Face ========== */
 @font-face {
   font-family: "GmarketSans";
   src: url("../fonts/GmarketSansTTFLight.ttf") format("truetype");
@@ -83,6 +85,7 @@
   font-style: normal;
 }
 
+/* ========== CSS Variables ========== */
 :root {
   /* GmarketSans 폰트 사이즈 */
   --gmarket-title: 40px;
@@ -108,10 +111,13 @@
   --font-gmarket: "GmarketSans", Arial, sans-serif;
   --font-free: "Freesentation", Arial, sans-serif;
 
+  /* 컬러 */
   --black: #000;
   --main_b: #007cff;
   --main_aqua: #00d4ea;
 }
+
+/* ========== Reset ========== */
 * {
   margin: 0;
   padding: 0;
@@ -126,7 +132,7 @@ body {
   width: 100%;
 }
 
-/* Header */
+/* ========== Header ========== */
 header {
   width: 100%;
   position: relative;
@@ -162,7 +168,7 @@ header {
   color: #2c2c2c;
 }
 
-/* Banner Section */
+/* ========== Banner Section ========== */
 .banner {
   width: 100%;
   padding: 0 20px;
@@ -200,7 +206,7 @@ header {
   background: #00bcd4;
 }
 
-/* Product Section */
+/* ========== Product Section ========== */
 .product {
   width: 100%;
   padding: 200px 40px;
@@ -259,7 +265,6 @@ header {
 
 .product_card:hover {
   border: 8px solid #ee8e34;
-  /* transform: translateY(-5px); */
   box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.15);
 }
 
@@ -330,7 +335,7 @@ header {
   background: var(--main_b);
 }
 
-/* Search Section */
+/* ========== Search Section ========== */
 .search {
   width: 100%;
   padding: 100px 40px;
@@ -430,7 +435,7 @@ header {
   height: auto;
 }
 
-/* Promo Section */
+/* ========== Promo Section ========== */
 .promo {
   width: 100%;
   padding: 100px 40px;
@@ -479,10 +484,7 @@ header {
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
 }
 
-.promo_tab:hover {
-  border: 7px solid #80beff;
-}
-
+.promo_tab:hover,
 .promo_tab.active {
   border: 7px solid #80beff;
 }
@@ -517,17 +519,14 @@ header {
   white-space: nowrap;
 }
 
-/* 2+1 탭 */
 body.tab-2plus1 .promo_speech_text {
   left: 43%;
 }
 
-/* 덤증정 탭 */
 body.tab-gift .promo_speech_text {
   left: 49%;
 }
 
-/* 차별화 탭 */
 body.tab-eco .promo_speech_text {
   left: 50%;
 }
@@ -552,13 +551,11 @@ body.tab-eco .promo_speech_text {
   width: fit-content;
 }
 
-/* 1+1, 2+1 탭 */
 body.tab-1plus1 .promo_products,
 body.tab-2plus1 .promo_products {
   padding-top: 42px;
 }
 
-/* 차별화, 덤증정 탭 */
 body.tab-eco .promo_product_list,
 body.tab-gift .promo_product_list {
   padding-top: 50px;
@@ -576,14 +573,9 @@ body.tab-gift .promo_product_list {
   transition: color 0.3s;
 }
 
-/* .promo_more:hover {
-  color: #007cff;
-} */
-
 .promo_product_list {
   display: none;
   gap: 30px;
-  /* padding-top: 40px; */
   justify-content: flex-start;
   width: fit-content;
 }
@@ -670,11 +662,10 @@ body.tab-gift .promo_product_list {
   text-align: center;
 }
 
-/* App Banner Section */
+/* ========== App Banner Section ========== */
 .app_banner {
   width: 100%;
   padding: 100px;
-  /* background-color: darkcyan; */
 }
 
 .app_banner_container {
@@ -690,7 +681,7 @@ body.tab-gift .promo_product_list {
   border-radius: 30px;
 }
 
-/* Value Section */
+/* ========== Value Section ========== */
 .value {
   width: 100%;
   padding: 150px 40px;
@@ -754,7 +745,6 @@ body.tab-gift .promo_product_list {
   cursor: pointer;
 }
 
-/* 화살표 몸통 (선) */
 .value_arrow::before {
   content: "";
   position: absolute;
@@ -767,7 +757,6 @@ body.tab-gift .promo_product_list {
   transition: width 0.4s ease;
 }
 
-/* 화살표 머리 */
 .value_arrow::after {
   content: "";
   position: absolute;
@@ -805,21 +794,19 @@ body.tab-gift .promo_product_list {
   text-align: left;
 }
 
-/* Value - 첫번째 (아래로) */
 .value_item:nth-child(1) {
   margin-top: 250px;
 }
 
-/* Growth - 두번째 (제일 위) */
 .value_item:nth-child(2) {
   margin-top: 0;
 }
 
-/* Together - 세번째 (중간) */
 .value_item:nth-child(3) {
   margin-top: 250px;
   margin-left: 100px;
 }
+
 .value_img_wrap {
   position: relative;
   width: 350px;
@@ -829,7 +816,7 @@ body.tab-gift .promo_product_list {
 
 .value_circle {
   position: absolute;
-  z-index: 0; /* 1에서 0으로 변경 */
+  z-index: 0;
 }
 
 .value_img {
@@ -840,12 +827,7 @@ body.tab-gift .promo_product_list {
   position: relative;
   z-index: 2;
   transition: transform 0.3s ease;
-  /* box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.25); */
 }
-
-/* .value_img:hover {
-  transform: translateY(-20px);
-} */
 
 .value_item_title {
   font-size: 32px;
@@ -866,7 +848,6 @@ body.tab-gift .promo_product_list {
   z-index: 2;
 }
 
-/* Value - 오른쪽 도넛 원형 */
 .value_circle_1 {
   background: linear-gradient(135deg, #a8a3ff 0%, #7effd4 100%);
   width: 280px;
@@ -885,13 +866,12 @@ body.tab-gift .promo_product_list {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 200px; /* 안쪽 구멍 크기 */
+  width: 200px;
   height: 200px;
   background: #fff;
   border-radius: 50%;
 }
 
-/* Growth - 왼쪽 작은 원형 */
 .value_circle_2 {
   background: linear-gradient(180deg, #7effd4 0%, #a8a3ff 100%);
   width: 300px;
@@ -903,7 +883,6 @@ body.tab-gift .promo_product_list {
   opacity: 0.5;
 }
 
-/* Together - 왼쪽 하단 타원형 */
 .value_circle_3 {
   background: linear-gradient(45deg, #7effd4 0%, #a8a3ff 100%);
   width: 770px;
@@ -913,15 +892,16 @@ body.tab-gift .promo_product_list {
   left: -100px;
   opacity: 0.5;
 }
-/* Help Section */
+
+/* ========== Help Section ========== */
 .help {
   width: 100%;
-  padding: 100px 40px;
+  padding: 100px 40px 180px;
   background-color: #fff;
 }
 
 .help_container {
-  max-width: 1200px;
+  max-width: 1500px;
   margin: 0 auto;
 }
 
@@ -942,7 +922,7 @@ body.tab-gift .promo_product_list {
 }
 
 .help_card {
-  width: 585px;
+  width: 655px;
   height: 210px;
   border-radius: 30px;
   padding: 40px 50px;
@@ -951,19 +931,16 @@ body.tab-gift .promo_product_list {
   box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
 }
 
-/* 고객센터  */
 .help_card_center {
   background-color: #cce5ff;
 }
 
-/* 창업문의  */
 .help_card_business {
   background-color: #fce8d6;
 }
 
 .help_card_center:hover {
   background-color: #007cff;
-  /* transform: translateY(-10px); */
   box-shadow: 0px 8px 25px rgba(0, 124, 255, 0.3);
 }
 
@@ -974,7 +951,6 @@ body.tab-gift .promo_product_list {
 
 .help_card_business:hover {
   background-color: #ee8e34;
-  /* transform: translateY(-10px); */
   box-shadow: 0px 8px 25px rgba(238, 142, 52, 0.3);
 }
 
@@ -1020,11 +996,12 @@ body.tab-gift .promo_product_list {
   width: 125px;
   height: 150px;
 }
-/* Footer */
+
+/* ========== Footer ========== */
 .footer {
   width: 100%;
   position: relative;
-  padding: 315px 40px 30px;
+  padding: 330px 0px 0px;
   overflow: hidden;
   min-height: 700px;
 }
@@ -1041,21 +1018,21 @@ body.tab-gift .promo_product_list {
 }
 
 .footer_container {
-  max-width: 1400px;
+  max-width: 1650px;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
   gap: 80px;
-  padding-bottom: 40px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  padding-bottom: 25px;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.5);
+  /* background-color: chartreuse; */
 }
 
-/* Footer Left */
 .footer_left {
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  gap: 15px;
 }
 
 .footer_social {
@@ -1071,8 +1048,9 @@ body.tab-gift .promo_product_list {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--main_b);s
-  font-size: 20px;
+  /* color: var(--main_b); */
+  color: #00bcd4;
+  font-size: 22px;
   transition: all 0.3s;
   text-decoration: none;
 }
@@ -1085,7 +1063,6 @@ body.tab-gift .promo_product_list {
 .footer_info {
   display: flex;
   flex-direction: column;
-  /* gap: 8px; */
 }
 
 .footer_text {
@@ -1096,11 +1073,16 @@ body.tab-gift .promo_product_list {
   line-height: 1.6;
 }
 
+/* ========== Footer Accordion ========== */
 .footer_accordion {
   display: flex;
   flex-direction: column;
   gap: 10px;
   margin-top: 10px;
+}
+
+.accordion_item {
+  position: relative;
 }
 
 .accordion_btn {
@@ -1111,7 +1093,7 @@ body.tab-gift .promo_product_list {
   border-radius: 5px;
   color: #fff;
   font-family: var(--font-free);
-  font-size: 15px;
+  font-size: 18px;
   font-weight: 500;
   display: flex;
   justify-content: space-between;
@@ -1127,18 +1109,77 @@ body.tab-gift .promo_product_list {
 
 .accordion_btn i {
   font-size: 12px;
+  transition: transform 0.3s;
 }
 
-/* Footer Right */
+/* 열릴 때 화살표 회전 */
+.accordion_item.active .accordion_btn i {
+  transform: rotate(180deg);
+}
+
+.accordion_dropdown {
+  position: absolute;
+  left: 0;
+  bottom: calc(100% + 10px);
+  width: 250px;
+  max-height: 0;
+  /* background-color: rgba(50, 50, 50, 0.95); */
+  background-color: #16778df3;
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: max-height 0.5s ease;
+  z-index: 10;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* 열렸을 때 */
+.accordion_item.active .accordion_dropdown {
+  max-height: 400px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.accordion_dropdown li {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.accordion_dropdown li:last-child {
+  border-bottom: none;
+}
+
+.accordion_dropdown li a {
+  width: 100%;
+  display: block;
+  padding: 12px 20px;
+  color: rgba(255, 255, 255, 0.8);
+  font-family: var(--font-free);
+  font-size: 16px;
+  font-weight: 400;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+
+.accordion_dropdown li a:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  font-weight: 500;
+}
+
 .footer_right {
   flex: 2.5;
   display: flex;
-  gap: 80px;
+  gap: 70px;
+  /* align-items: center; */
+  /* margin-top: 20px; */
 }
 
 /* Quick Menu */
 .footer_quick {
-  flex: 1;
+  flex: 2;
+  max-width: 540px;
 }
 
 .quick_title {
@@ -1165,7 +1206,7 @@ body.tab-gift .promo_product_list {
 
 .quick_link {
   font-family: var(--font-free);
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 400;
   color: #fff;
   text-decoration: none;
@@ -1174,7 +1215,7 @@ body.tab-gift .promo_product_list {
 }
 
 .quick_link:hover {
-font-weight: 500;
+  font-weight: 500;
 }
 
 /* Notice */
@@ -1200,7 +1241,7 @@ font-weight: 500;
 
 .notice_more {
   font-family: var(--font-free);
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 500;
   color: #fff;
   text-decoration: none;
@@ -1219,7 +1260,7 @@ font-weight: 500;
 
 .notice_item {
   font-family: var(--font-free);
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 400;
   color: #fff;
   text-decoration: none;
@@ -1228,40 +1269,20 @@ font-weight: 500;
 }
 
 .notice_item:hover {
-  color: var(--main_aqua);
-  transform: translateX(5px);
-}
-
-.footer_links {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.footer_link {
-  font-family: var(--font-free);
-  font-size: 13px;
-  font-weight: 300;
-  color: #fff;
-  text-decoration: none;
-  transition: all 0.3s;
-}
-
-.footer_link:hover {
-  color: var(--main_aqua);
+  font-weight: 500;
 }
 
 /* Copyright */
 .footer_copyright {
-  max-width: 1400px;
+  max-width: 1800px;
   margin: 0 auto;
-  padding-top: 20px;
+  padding-top: 15px;
   text-align: center;
 }
 
 .copyright_text {
   font-family: var(--font-free);
-  font-size: 12px;
+  font-size: 15px;
   font-weight: 300;
   color: rgba(255, 255, 255, 0.7);
 }
