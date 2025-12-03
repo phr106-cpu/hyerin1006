@@ -156,18 +156,304 @@ header {
   background: none;
   border: none;
   cursor: pointer;
-  padding: 5px;
+  padding: 0;
+  width: 40px;
+  height: 40px;
 }
 
+/* Font Awesome 아이콘 숨기기 */
 .menu_btn i {
-  font-size: 24px;
-  color: var(--black);
+  display: none;
+}
+
+/* 커스텀 햄버거 아이콘 */
+.menu_icon {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 11px 0;
+  list-style: none;
+  transition: background-color 0.3s;
+  position: relative;
+}
+
+.menu_icon li {
+  width: 23px;
+  height: 2px;
+  background: var(--black);
+  transition: all 0.6s ease;
+  list-style: none;
+}
+
+/* 메뉴 열렸을 때 X로 변경 */
+header.menu_active .menu_icon {
+  background-color: transparent;
+  border-radius: 50%;
+}
+
+header.menu_active .menu_icon li:nth-child(1) {
+  position: absolute;
+  transform: rotate(45deg);
+  top: 50%;
+  left: 50%;
+  margin-left: -11.5px;
+  margin-top: -1px;
+}
+
+header.menu_active .menu_icon li:nth-child(2) {
+  opacity: 0;
+}
+
+header.menu_active .menu_icon li:nth-child(3) {
+  position: absolute;
+  transform: rotate(-45deg);
+  top: 50%;
+  margin-left: -11.5px;
+  margin-top: -1px;
+}
+
+.menu_icon:hover {
+  background-color: rgba(0, 124, 255, 0.1);
+  border-radius: 50%;
 }
 
 .menu_btn:hover i {
   color: #2c2c2c;
 }
 
+.ham_logo {
+  height: 35px;
+  width: auto;
+}
+
+.ham_close {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  width: 40px;
+  height: 40px;
+  position: relative;
+}
+
+.ham_close i {
+  display: none; /* Font Awesome 숨기기 */
+}
+
+.close_icon {
+  width: 100%;
+  height: 100%;
+  list-style: none;
+  position: relative;
+  transition: background-color 0.3s;
+  border-radius: 50%;
+}
+
+.close_icon li {
+  position: absolute;
+  width: 23px;
+  height: 2px;
+  background: var(--black);
+  left: 50%;
+  top: 50%;
+  transition: all 0.3s;
+}
+
+.close_icon li:nth-child(1) {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.close_icon li:nth-child(2) {
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.close_icon:hover {
+  background-color: rgba(0, 124, 255, 0.1);
+}
+
+/* ========== Hamburger Menu ========== */
+body.menu_open {
+  overflow: hidden;
+}
+
+header.menu_active {
+  background-color: rgba(255, 255, 255, 0.7);
+  display: flex;
+  height: 100vh;
+  flex-direction: column;
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+}
+
+header.menu_active .header_img {
+  display: none;
+}
+
+header.menu_active .menu_btn {
+  display: none;
+}
+
+.ham_menu {
+  display: none;
+  width: 100%;
+  flex: 1;
+  overflow-y: auto;
+  flex-direction: column;
+  background-color: transparent; /* 투명 */
+}
+
+header.menu_active .ham_menu {
+  display: flex;
+  background-color: transparent; /* 투명 */
+}
+
+.ham_header {
+  width: 100%;
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  background-color: transparent; /* 투명 */
+}
+
+.ham_container {
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 80px 40px;
+  display: flex;
+  gap: 100px;
+  background-color: transparent; /* 투명 */
+}
+
+.ham_content {
+  display: flex;
+  gap: 100px;
+  flex-wrap: wrap;
+  flex: 1;
+}
+
+.ham_list {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+}
+
+.ham_list > li {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+}
+
+.ham_list > li > h3 {
+  font-size: 27px;
+  color: var(--black);
+  font-family: var(--font-gmarket);
+  font-weight: 500;
+  margin-bottom: 20px;
+  border-bottom: 2px solid var(--main_b);
+  padding-bottom: 10px;
+  min-width: 150px;
+  text-align: center;
+}
+
+.ham_sub {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  list-style: none;
+}
+
+.ham_sub li {
+  list-style: none;
+  text-align: center;
+}
+
+.ham_sub li a {
+  font-size: 20px;
+  font-family: var(--font-free);
+  color: var(--black);
+  transition: color 0.3s;
+  display: block;
+  padding: 4px 0;
+  text-decoration: none;
+}
+
+.ham_sub li a:hover {
+  color: #006fba;
+  font-weight: 700;
+}
+
+.ham_right {
+  margin-left: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.ham_btn {
+  width: 180px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #2abada;
+  border-radius: 50px;
+  color: var(--black);
+  font-family: var(--font-gmarket);
+  font-size: 20px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+
+.ham_btn:hover {
+  background: var(--main_b);
+  border: 2px solid var(--main_b);
+
+  color: #fff;
+}
+
+.ham_links {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  list-style: none;
+  align-items: center;
+}
+
+.ham_links li {
+  list-style: none;
+}
+
+.ham_links li a {
+  font-size: 20px;
+  font-family: var(--font-free);
+  color: var(--black);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 140px;
+  transition: color 0.3s;
+  text-decoration: none;
+  border-bottom: 2px solid #2abada;
+  /* padding-bottom: 10px; */
+  padding: 0px 5px 8px;
+}
+
+.ham_links li a:hover {
+  color: #2c2c2c;
+  border-bottom: 2px solid var(--main_b);
+}
+
+.ham_links li a i {
+  font-size: 12px;
+}
 /* ========== Banner Section ========== */
 .banner {
   width: 100%;
@@ -178,7 +464,7 @@ header {
 
 .bannerSwiper {
   width: 100%;
-  overflow: hidden;
+  overflow: visible;
 }
 
 .bannerSwiper .swiper-slide-active {
@@ -393,7 +679,7 @@ header {
 }
 
 .productSwiper .swiper-pagination-bullet-active {
-  background: var(--main_b);
+  background: #00bcd4;
 }
 
 /* ========== Search Section ========== */
@@ -574,27 +860,31 @@ header {
 
 .promo_speech_text {
   position: absolute;
-  top: 70%;
-  left: 42%;
-  transform: translate(-50%, -50%);
+  top: 70%; /* 또는 350px 같은 고정값 */
+  left: 210px; /* 픽셀로 고정! */
   display: flex;
   align-items: center;
   gap: 30px;
   white-space: nowrap;
+  transform: translateY(-50%); /* X축은 빼고 Y축만 */
+}
+
+/* 각 탭별 위치 조정 */
+body.tab-1plus1 .promo_speech_text {
+  left: 210px;
 }
 
 body.tab-2plus1 .promo_speech_text {
-  left: 43%;
+  left: 215px;
 }
 
 body.tab-gift .promo_speech_text {
-  left: 49%;
+  left: 245px;
 }
 
 body.tab-eco .promo_speech_text {
-  left: 50%;
+  left: 80px;
 }
-
 .promo_title {
   font-size: 32px;
   font-family: var(--font-gmarket);
@@ -763,8 +1053,8 @@ body.tab-gift .promo_product_list {
 }
 
 .value_main_title {
-  font-size: var(--gmarket-title);
-  font-family: var(--font-gmarket);
+  font-size: 50px;
+  font-family: var(--font-free);
   font-weight: 500;
   color: var(--black);
   line-height: 1.5;
@@ -778,7 +1068,7 @@ body.tab-gift .promo_product_list {
   position: absolute;
   bottom: 5px;
   left: -300px;
-  width: 780px;
+  width: 800px;
   height: 30px;
   background: linear-gradient(90deg, #48ff9b 0%, #8a7dff 100%);
   opacity: 0.5;
@@ -1319,7 +1609,7 @@ body.tab-gift .promo_product_list {
 .notice_list {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 12px;
 }
 
 .notice_item {

@@ -25,6 +25,7 @@
 
   <body>
     <div class="wrap">
+      <!-- 기존 header 내용 -->
       <header>
         <img
           src="../GS25/images/top.png"
@@ -32,8 +33,127 @@
           class="header_img"
         />
         <button class="menu_btn">
-          <i class="fa-solid fa-bars"></i>
+          <ul class="menu_icon">
+            <li></li>
+            <li></li>
+            <li></li>
+          </ul>
         </button>
+
+        <!-- 햄버거 메뉴 -->
+        <div class="ham_menu">
+          <div class="ham_header">
+            <img
+              src="../GS25/images/ham_logo.png"
+              alt="GS25"
+              class="ham_logo"
+            />
+            <button class="ham_close">
+              <ul class="close_icon">
+                <li></li>
+                <li></li>
+              </ul>
+            </button>
+          </div>
+
+          <div class="ham_container">
+            <div class="ham_content">
+              <ul class="ham_list">
+                <li>
+                  <h3>상품</h3>
+                  <ul class="ham_sub">
+                    <li><a href="#">전체상품</a></li>
+                    <li><a href="#">행사상품</a></li>
+                    <li><a href="#">차별화상품</a></li>
+                    <li><a href="#">e카달로그</a></li>
+                  </ul>
+                </li>
+              </ul>
+
+              <ul class="ham_list">
+                <li>
+                  <h3>매장/서비스</h3>
+                  <ul class="ham_sub">
+                    <li><a href="#">매장 검색</a></li>
+                    <li><a href="#">생활서비스</a></li>
+                    <li><a href="#">카운터ff점포</a></li>
+                  </ul>
+                </li>
+              </ul>
+
+              <ul class="ham_list">
+                <li>
+                  <h3>이벤트</h3>
+                  <ul class="ham_sub">
+                    <li><a href="#">진행중인 이벤트</a></li>
+                    <li><a href="#">종료이벤트</a></li>
+                  </ul>
+                </li>
+              </ul>
+
+              <ul class="ham_list">
+                <li>
+                  <h3>멤버십</h3>
+                  <ul class="ham_sub">
+                    <li><a href="#">GS 멤버십 소개</a></li>
+                    <li><a href="#">GS PAY</a></li>
+                    <li><a href="#">멤버십 가입</a></li>
+                    <li><a href="#">제휴카드 / 상품권</a></li>
+                    <li><a href="#">멤버십 FAQ</a></li>
+                  </ul>
+                </li>
+              </ul>
+
+              <ul class="ham_list">
+                <li>
+                  <h3>창업안내</h3>
+                  <ul class="ham_sub">
+                    <li><a href="#">창업가이드</a></li>
+                    <li><a href="#">창업설명회</a></li>
+                    <li><a href="#">추천점포소개</a></li>
+                    <li><a href="#">입지제안 / 상담</a></li>
+                    <li><a href="#">가맹전자계약</a></li>
+                  </ul>
+                </li>
+              </ul>
+
+              <ul class="ham_list">
+                <li>
+                  <h3>상생협력</h3>
+                  <ul class="ham_sub">
+                    <li><a href="#">운영지원제도</a></li>
+                    <li><a href="#">경영주 복지몰</a></li>
+                    <li><a href="#">참여제도</a></li>
+                    <li><a href="#">복리후생</a></li>
+                    <li><a href="#">GS 명예의전당</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+
+            <div class="ham_right">
+              <a href="#" class="ham_btn">로그인</a>
+              <a href="#" class="ham_btn">회원가입</a>
+              <ul class="ham_links">
+                <li>
+                  <a href="#"
+                    >회사소개 <i class="fa-solid fa-chevron-right"></i
+                  ></a>
+                </li>
+                <li>
+                  <a href="#"
+                    >채용안내 <i class="fa-solid fa-chevron-right"></i
+                  ></a>
+                </li>
+                <li>
+                  <a href="#"
+                    >고객센터 <i class="fa-solid fa-chevron-right"></i
+                  ></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
       </header>
       <!-- Banner Section -->
       <section class="banner">
@@ -257,9 +377,9 @@
       <!-- Search Section -->
       <section class="search">
         <div class="search_container">
-          <div class="search_left">
+          <div class="search_left" data-aos="fade-up" data-aos-duration="500">
             <div class="search_top_txt">
-              <h2 class="search_title">우리 동네 GS25<br/>어디있나요?</h2>
+              <h2 class="search_title">우리 동네 GS25<br />어디있나요?</h2>
               <p class="search_subtitle">가까운 매장을 확인해보세요</p>
             </div>
 
@@ -272,7 +392,12 @@
               <button class="search_btn">검색</button>
             </div>
           </div>
-          <div class="search_right">
+          <div
+            class="search_right"
+            data-aos="fade-up"
+            data-aos-delay="150"
+            data-aos-duration="500"
+          >
             <img
               src="../GS25/images/search_img.png"
               alt="search_img"
@@ -479,18 +604,20 @@
       <!-- Value Section -->
       <section class="value">
         <div class="value_container">
-          <div class="value_title_wrap">
+          <div
+            class="value_title_wrap"
+            data-aos="fade-right"
+            data-aos-duration="800"
+          >
             <h2 class="value_main_title">
               당신 곁에는<br />언제나 <span class="highlight">GS25</span>가
               있습니다.
             </h2>
-            <!-- <i class="fa-solid fa-arrow-right-long value_arrow"></i> -->
             <div class="value_arrow"></div>
           </div>
-          <!-- //.value_title_wrap -->
 
           <div class="value_content">
-            <div class="value_item">
+            <div class="value_item" data-aos="fade-up" data-aos-delay="0">
               <div class="value_img_wrap">
                 <div class="value_circle value_circle_1"></div>
                 <img
@@ -500,10 +627,10 @@
                 />
               </div>
               <h3 class="value_item_title">Value</h3>
-              <p class="value_item_desc">GS25만의 차별화된 상품과 서비스</p>
+              <p class="value_item_desc">GS25만의 차별화된 상품과 서비스</p>
             </div>
 
-            <div class="value_item">
+            <div class="value_item" data-aos="fade-up" data-aos-delay="200">
               <div class="value_img_wrap">
                 <div class="value_circle value_circle_2"></div>
                 <img
@@ -516,7 +643,7 @@
               <p class="value_item_desc">업계 최고의 점포 당 매출액 달성</p>
             </div>
 
-            <div class="value_item">
+            <div class="value_item" data-aos="fade-up" data-aos-delay="400">
               <div class="value_img_wrap">
                 <div class="value_circle value_circle_3"></div>
                 <img
@@ -526,7 +653,7 @@
                 />
               </div>
               <h3 class="value_item_title">Together</h3>
-              <p class="value_item_desc">경영주와의 끊임없는 소통과 협력</p>
+              <p class="value_item_desc">경영주와의 끊임없는 소통과 협력</p>
             </div>
           </div>
         </div>
@@ -536,10 +663,16 @@
       <!-- Help Section -->
       <section class="help">
         <div class="help_container">
-          <h2 class="help_title">무엇을 도와드릴까요?</h2>
+          <h2 class="help_title" data-aos="fade-up" data-aos-duration="300">
+            무엇을 도와드릴까요?
+          </h2>
 
           <div class="help_cards">
-            <div class="help_card help_card_center">
+            <div
+              class="help_card help_card_center"
+              data-aos="fade-up"
+              data-aos-delay="300"
+            >
               <div class="help_card_content">
                 <div class="help_text">
                   <h3 class="help_card_title">고객센터</h3>
@@ -555,7 +688,11 @@
               </div>
             </div>
 
-            <div class="help_card help_card_business">
+            <div
+              class="help_card help_card_business"
+              data-aos="fade-up"
+              data-aos-delay="400"
+            >
               <div class="help_card_content">
                 <div class="help_text">
                   <h3 class="help_card_title">창업문의</h3>
