@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
-  // 초기 탭 설정 (1+1 기본)
-  document.body.className = "tab-1plus1"; // 🔥 추가!
+  // 초기 탭 설정
+  document.body.className = "tab-1plus1";
 
   // AOS 초기화
   AOS.init({
@@ -10,8 +10,19 @@ document.addEventListener("DOMContentLoaded", function () {
     offset: 100,
   });
 
-  // ... 나머지 코드
-  // 햄버거 메뉴 코드
+  // ✨ 스크롤 시 고정 헤더 표시
+  const fixedHeader = document.querySelector(".fixed_header");
+  const originalHeader = document.querySelector("header");
+
+  window.addEventListener("scroll", function () {
+    if (window.scrollY > 100) {
+      fixedHeader.classList.add("show");
+    } else {
+      fixedHeader.classList.remove("show");
+    }
+  });
+
+  // 햄버거 메뉴 코드 (기존 header)
   const menuBtn = document.querySelector(".menu_btn");
   const hamClose = document.querySelector(".ham_close");
   const header = document.querySelector("header");
@@ -26,14 +37,24 @@ document.addEventListener("DOMContentLoaded", function () {
     document.body.classList.remove("menu_open");
   });
 
-  // Banner Swiper - 이노그리드처럼 부드럽게!
+  // ✨ 고정 헤더 햄버거 메뉴
+  const menuBtnFixed = document.querySelector(".menu_btn_fixed");
+
+  if (menuBtnFixed) {
+    menuBtnFixed.addEventListener("click", function () {
+      header.classList.add("menu_active");
+      document.body.classList.add("menu_open");
+    });
+  }
+
+  // Banner Swiper
   var bannerSwiper = new Swiper(".bannerSwiper", {
     slidesPerView: 1.5,
     spaceBetween: 20,
     centeredSlides: true,
     loop: true,
-    loopAdditionalSlides: 2, // 추가 슬라이드 복제
-    speed: 800, // 부드러운 전환 속도
+    loopAdditionalSlides: 2,
+    speed: 800,
     autoplay: {
       delay: 3000,
       disableOnInteraction: false,
@@ -47,8 +68,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Product Swiper
   var productSwiper = new Swiper(".productSwiper", {
-    slidesPerView: "auto",
+    slidesPerView: 4,
+    slidesPerGroup: 4,
     spaceBetween: 30,
+    loop: true,
+    autoplay: {
+      delay: 3000,
+      disableOnInteraction: false,
+    },
     navigation: {
       nextEl: ".swiper-button-next",
       prevEl: ".swiper-button-prev",
@@ -59,7 +86,7 @@ document.addEventListener("DOMContentLoaded", function () {
     },
   });
 
-  // Promo Tabs 코드
+  // Promo Tabs
   const promoTabs = document.querySelectorAll(".promo_tab");
   const promoLists = document.querySelectorAll(".promo_product_list");
 
