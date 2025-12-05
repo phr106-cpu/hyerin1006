@@ -282,29 +282,33 @@ header.menu_active .menu_icon li:nth-child(3) {
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   z-index: 1000;
   transition: top 0.3s ease;
-  padding: 25px 40px;
+  padding: 0;
 }
 
 .fixed_header.show {
-  top: 0; /* 스크롤 시 나타남 */
+  top: 0;
 }
 
 .fixed_header_container {
   max-width: 1600px;
   margin: 0 auto;
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   justify-content: space-between;
+  padding: 15px 40px 0;
+  min-height: 80px;
 }
 
 .fixed_logo {
   height: 40px;
   width: auto;
+  margin-bottom: 20px;
 }
 
 .fixed_nav {
   display: flex;
   gap: 90px;
+  align-items: flex-end;
 }
 
 .nav_link {
@@ -313,9 +317,10 @@ header.menu_active .menu_icon li:nth-child(3) {
   font-weight: 500;
   color: var(--black);
   text-decoration: none;
-  padding-bottom: 5px;
+  padding-bottom: 20px;
   border-bottom: 3px solid transparent;
   transition: all 0.3s;
+  display: inline-block;
 }
 
 .nav_link:hover {
@@ -326,13 +331,34 @@ header.menu_active .menu_icon li:nth-child(3) {
 
 .fixed_right {
   display: flex;
-  align-items: center;
-  gap: 20px;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
+  margin-bottom: 20px;
 }
 
-.fixed_lang {
+.fixed_lang_links {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.lang_link {
   font-family: var(--font-free);
-  font-size: 14px;
+  font-size: 13px;
+  color: var(--black);
+  text-decoration: none;
+  transition: all 0.3s;
+}
+
+.lang_link:hover {
+  color: var(--main_b);
+  font-weight: 600;
+}
+
+.lang_divider {
+  font-family: var(--font-free);
+  font-size: 13px;
   color: var(--black);
 }
 
@@ -344,18 +370,49 @@ header.menu_active .menu_icon li:nth-child(3) {
   width: 40px;
   height: 40px;
 }
+
+.menu_btn_fixed .menu_icon {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 11px 0;
+  list-style: none;
+  transition: background-color 0.3s;
+  position: relative;
+}
+
+.menu_btn_fixed .menu_icon li {
+  width: 23px;
+  height: 2px;
+  background: var(--black);
+  transition: all 0.6s ease;
+  list-style: none;
+}
+
+.menu_btn_fixed .menu_icon:hover {
+  background-color: rgba(0, 124, 255, 0.1);
+  border-radius: 50%;
+}
 /* ========== Hamburger Menu ========== */
 body.menu_open {
   overflow: hidden;
 }
 
 header.menu_active {
-  background-color: rgba(255, 255, 255, 0.7);
+  background-color: rgba(255, 255, 255, 0.9);
   display: flex;
   height: 100vh;
   flex-direction: column;
   backdrop-filter: blur(15px);
   -webkit-backdrop-filter: blur(15px);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9999;
 }
 
 header.menu_active .header_img {
@@ -372,12 +429,12 @@ header.menu_active .menu_btn {
   flex: 1;
   overflow-y: auto;
   flex-direction: column;
-  background-color: transparent; /* 투명 */
+  background-color: transparent;
 }
 
 header.menu_active .ham_menu {
   display: flex;
-  background-color: transparent; /* 투명 */
+  background-color: transparent;
 }
 
 .ham_header {
@@ -387,7 +444,7 @@ header.menu_active .ham_menu {
   justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-  background-color: transparent; /* 투명 */
+  background-color: transparent;
 }
 
 .ham_container {
@@ -397,7 +454,7 @@ header.menu_active .ham_menu {
   padding: 80px 40px;
   display: flex;
   gap: 100px;
-  background-color: transparent; /* 투명 */
+  background-color: transparent;
 }
 
 .ham_content {
@@ -947,30 +1004,14 @@ header.menu_active .ham_menu {
 .promo_speech_text {
   position: absolute;
   top: 70%;
-  left: 210px;
+  left: 44%;
+  transform: translate(-50%, -50%);
   display: flex;
   align-items: center;
   gap: 30px;
   white-space: nowrap;
-  transform: translateY(-50%);
 }
 
-/* 각 탭별 위치 조정 */
-body.tab-1plus1 .promo_speech_text {
-  left: 210px;
-}
-
-body.tab-2plus1 .promo_speech_text {
-  left: 215px;
-}
-
-body.tab-gift .promo_speech_text {
-  left: 245px;
-}
-
-body.tab-eco .promo_speech_text {
-  left: 80px;
-}
 .promo_title {
   font-size: 32px;
   font-family: var(--font-gmarket);
@@ -989,16 +1030,7 @@ body.tab-eco .promo_speech_text {
 .promo_products {
   position: relative;
   width: fit-content;
-}
-
-body.tab-1plus1 .promo_products,
-body.tab-2plus1 .promo_products {
   padding-top: 42px;
-}
-
-body.tab-eco .promo_product_list,
-body.tab-gift .promo_product_list {
-  padding-top: 50px;
 }
 
 .promo_more {
@@ -1386,6 +1418,7 @@ body.tab-gift .promo_product_list {
   cursor: pointer;
   transition: all 0.3s ease;
   box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+  text-decoration: none;
 }
 
 .help_card_center {
@@ -1544,10 +1577,10 @@ body.tab-gift .promo_product_list {
 
 .accordion_btn {
   width: 250px;
-  padding: 12px 20px;
+  padding: 15px 20px;
   background-color: transparent;
   border: 1px solid rgba(255, 255, 255, 0.5);
-  border-radius: 5px;
+  border-radius: 10px;
   color: #fff;
   font-family: var(--font-free);
   font-size: 18px;

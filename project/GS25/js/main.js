@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
   // 초기 탭 설정
-  document.body.className = "tab-1plus1";
+  document.body.classList.add("tab-1plus1");
 
   // AOS 초기화
   AOS.init({
@@ -10,10 +10,14 @@ document.addEventListener("DOMContentLoaded", function () {
     offset: 100,
   });
 
-  // ✨ 스크롤 시 고정 헤더 표시
+  // 헤더 요소들
   const fixedHeader = document.querySelector(".fixed_header");
-  const originalHeader = document.querySelector("header");
+  const originalHeader = document.querySelector("header:first-of-type");
+  const menuBtn = document.querySelector(".menu_btn");
+  const menuBtnFixed = document.querySelector(".menu_btn_fixed");
+  const hamClose = document.querySelector(".ham_close");
 
+  // 스크롤 시 고정 헤더 표시
   window.addEventListener("scroll", function () {
     if (window.scrollY > 100) {
       fixedHeader.classList.add("show");
@@ -22,28 +26,32 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
-  // 햄버거 메뉴 코드 (기존 header)
-  const menuBtn = document.querySelector(".menu_btn");
-  const hamClose = document.querySelector(".ham_close");
-  const header = document.querySelector("header");
-
-  menuBtn.addEventListener("click", function () {
-    header.classList.add("menu_active");
-    document.body.classList.add("menu_open");
-  });
-
-  hamClose.addEventListener("click", function () {
-    header.classList.remove("menu_active");
-    document.body.classList.remove("menu_open");
-  });
-
-  // ✨ 고정 헤더 햄버거 메뉴
-  const menuBtnFixed = document.querySelector(".menu_btn_fixed");
-
-  if (menuBtnFixed) {
-    menuBtnFixed.addEventListener("click", function () {
-      header.classList.add("menu_active");
+  // 기존 헤더 햄버거 메뉴 열기
+  if (menuBtn) {
+    menuBtn.addEventListener("click", function (e) {
+      e.preventDefault();
+      originalHeader.classList.add("menu_active");
       document.body.classList.add("menu_open");
+    });
+  }
+
+  // 고정 헤더 햄버거 메뉴 열기
+  if (menuBtnFixed) {
+    menuBtnFixed.addEventListener("click", function (e) {
+      e.preventDefault();
+      e.stopPropagation();
+      originalHeader.classList.add("menu_active");
+      document.body.classList.add("menu_open");
+      fixedHeader.classList.remove("show");
+    });
+  }
+
+  // 햄버거 메뉴 닫기
+  if (hamClose) {
+    hamClose.addEventListener("click", function (e) {
+      e.preventDefault();
+      originalHeader.classList.remove("menu_active");
+      document.body.classList.remove("menu_open");
     });
   }
 
@@ -98,11 +106,21 @@ document.addEventListener("DOMContentLoaded", function () {
       this.classList.add("active");
 
       promoLists.forEach((list) => list.classList.remove("active"));
-      document
-        .querySelector(`.promo_product_list[data-tab="${targetTab}"]`)
-        .classList.add("active");
+      const targetList = document.querySelector(
+        `.promo_product_list[data-tab="${targetTab}"]`
+      );
+      if (targetList) {
+        targetList.classList.add("active");
+      }
 
-      document.body.className = `tab-${targetTab}`;
+      // tab 클래스 교체
+      document.body.classList.remove(
+        "tab-1plus1",
+        "tab-2plus1",
+        "tab-gift",
+        "tab-eco"
+      );
+      document.body.classList.add(`tab-${targetTab}`);
 
       const titles = {
         "1plus1": "1+1상품",
@@ -117,9 +135,10 @@ document.addEventListener("DOMContentLoaded", function () {
         eco: "우리만의 특별한 상품!",
       };
 
-      document.querySelector(".promo_title").textContent = titles[targetTab];
-      document.querySelector(".promo_subtitle").textContent =
-        subtitles[targetTab];
+      const titleEl = document.querySelector(".promo_title");
+      const subtitleEl = document.querySelector(".promo_subtitle");
+      if (titleEl) titleEl.textContent = titles[targetTab];
+      if (subtitleEl) subtitleEl.textContent = subtitles[targetTab];
     });
   });
 
@@ -129,7 +148,9 @@ document.addEventListener("DOMContentLoaded", function () {
   accordionBtns.forEach((btn) => {
     btn.addEventListener("click", function () {
       const accordionItem = this.closest(".accordion_item");
-      accordionItem.classList.toggle("active");
+      if (accordionItem) {
+        accordionItem.classList.toggle("active");
+      }
     });
   });
 });
