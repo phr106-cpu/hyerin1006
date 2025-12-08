@@ -581,6 +581,10 @@ header.menu_active .ham_menu {
 .ham_links li a i {
   font-size: 12px;
 }
+
+.ham_header_icons {
+  display: none;
+}
 /* ========== Banner Section ========== */
 .banner {
   width: 100%;
@@ -589,15 +593,15 @@ header.menu_active .ham_menu {
   overflow: hidden;
 }
 
-.bannerSwiper {
-  width: 100%;
-  overflow: visible;
+.bannerSwiper .swiper-slide {
+  width: 80%; /* 슬라이드 너비를 80%로 설정 */
+  opacity: 0.5; /* 비활성 슬라이드는 투명하게 */
+  transition: opacity 0.3s;
 }
 
 .bannerSwiper .swiper-slide-active {
-  opacity: 1;
+  opacity: 1; /* 활성 슬라이드만 선명하게 */
 }
-
 .banner_content {
   position: relative;
   width: 100%;
@@ -611,7 +615,6 @@ header.menu_active .ham_menu {
   border-radius: 20px;
 }
 
-/* 기본 배너 오버레이 */
 .banner_overlay {
   position: absolute;
   bottom: 0;
@@ -627,7 +630,6 @@ header.menu_active .ham_menu {
   opacity: 1;
 }
 
-/* 자세히 보기 버튼 */
 .banner_more_btn {
   display: flex;
   align-items: center;
@@ -1485,6 +1487,10 @@ header.menu_active .ham_menu {
 .help_img {
   width: 125px;
   height: 150px;
+}
+
+.mobile_br {
+  display: none;
 }
 
 /* ========== Footer ========== */

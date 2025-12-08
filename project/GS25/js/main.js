@@ -25,12 +25,12 @@ document.addEventListener("DOMContentLoaded", function () {
       fixedHeader.classList.remove("show");
     }
   });
-
   // 기존 헤더 햄버거 메뉴 열기
   if (menuBtn) {
     menuBtn.addEventListener("click", function (e) {
       e.preventDefault();
-      originalHeader.classList.add("menu_active");
+      const targetHeader = document.querySelector("header");
+      targetHeader.classList.add("menu_active");
       document.body.classList.add("menu_open");
     });
   }
@@ -40,9 +40,9 @@ document.addEventListener("DOMContentLoaded", function () {
     menuBtnFixed.addEventListener("click", function (e) {
       e.preventDefault();
       e.stopPropagation();
-      originalHeader.classList.add("menu_active");
+      const targetHeader = document.querySelector("header");
+      targetHeader.classList.add("menu_active");
       document.body.classList.add("menu_open");
-      fixedHeader.classList.remove("show");
     });
   }
 
@@ -50,27 +50,43 @@ document.addEventListener("DOMContentLoaded", function () {
   if (hamClose) {
     hamClose.addEventListener("click", function (e) {
       e.preventDefault();
-      originalHeader.classList.remove("menu_active");
+      const targetHeader = document.querySelector("header");
+      targetHeader.classList.remove("menu_active");
       document.body.classList.remove("menu_open");
     });
   }
+  // 햄버거 메뉴 아코디언 (1024px용)
+  document.querySelectorAll(".ham_list > li > h3").forEach((title) => {
+    title.addEventListener("click", function (e) {
+      e.preventDefault();
+      const parent = this.parentElement;
+      const isActive = parent.classList.contains("active");
 
-  // Banner Swiper
-  var bannerSwiper = new Swiper(".bannerSwiper", {
-    slidesPerView: 1.5,
-    spaceBetween: 20,
-    centeredSlides: true,
+      // 다른 메뉴 닫기
+      document.querySelectorAll(".ham_list > li").forEach((item) => {
+        item.classList.remove("active");
+      });
+
+      // 클릭한 메뉴 토글
+      if (!isActive) {
+        parent.classList.add("active");
+      }
+    });
+  });
+
+  // 배너 Swiper
+  const bannerSwiper = new Swiper(".bannerSwiper", {
     loop: true,
-    loopAdditionalSlides: 2,
-    speed: 800,
-    autoplay: {
-      delay: 3000,
-      disableOnInteraction: false,
-    },
+    centeredSlides: true,
+    slidesPerView: "auto",
+    spaceBetween: 20,
     pagination: {
       el: ".swiper-pagination",
-      dynamicBullets: true,
       clickable: true,
+    },
+    autoplay: {
+      delay: 5000,
+      disableOnInteraction: false,
     },
   });
 
@@ -91,6 +107,18 @@ document.addEventListener("DOMContentLoaded", function () {
     pagination: {
       el: ".productSwiper .swiper-pagination",
       clickable: true,
+    },
+    breakpoints: {
+      320: {
+        slidesPerView: 2,
+        slidesPerGroup: 2,
+        spaceBetween: 15,
+      },
+      1025: {
+        slidesPerView: 4,
+        slidesPerGroup: 4,
+        spaceBetween: 30,
+      },
     },
   });
 
