@@ -128,7 +128,9 @@
 
 body {
   font-family: "Freesentation", "GmarketSans", Arial, sans-serif;
+  overflow-x: hidden;
 }
+
 
 .wrap {
   width: 100%;
@@ -235,6 +237,7 @@ header.menu_active .menu_icon li:nth-child(3) {
   width: 40px;
   height: 40px;
   position: relative;
+  margin-left: auto;
 }
 
 .ham_close i {
@@ -268,9 +271,14 @@ header.menu_active .menu_icon li:nth-child(3) {
   transform: translate(-50%, -50%) rotate(-45deg);
 }
 
+.close_icon li:nth-child(3) {
+  display: none;
+}
+
 .close_icon:hover {
   background-color: rgba(0, 124, 255, 0.1);
 }
+
 /* ========== Fixed Header ========== */
 .fixed_header {
   position: fixed;
@@ -396,6 +404,7 @@ header.menu_active .menu_icon li:nth-child(3) {
   background-color: rgba(0, 124, 255, 0.1);
   border-radius: 50%;
 }
+
 /* ========== Hamburger Menu ========== */
 body.menu_open {
   overflow: hidden;
@@ -470,13 +479,13 @@ header.menu_active .ham_menu {
   list-style: none;
 }
 
-.ham_list > li {
+.ham_list>li {
   display: flex;
   flex-direction: column;
   list-style: none;
 }
 
-.ham_list > li > h3 {
+.ham_list>li>h3 {
   font-size: 27px;
   color: var(--black);
   font-family: var(--font-gmarket);
@@ -585,23 +594,28 @@ header.menu_active .ham_menu {
 .ham_header_icons {
   display: none;
 }
+
 /* ========== Banner Section ========== */
 .banner {
   width: 100%;
-  padding: 0 20px;
+  padding: 0;
   margin-top: 20px;
   overflow: hidden;
 }
 
 .bannerSwiper .swiper-slide {
-  width: 80%; /* 슬라이드 너비를 80%로 설정 */
-  opacity: 0.5; /* 비활성 슬라이드는 투명하게 */
+  width: 80%;
+  /* 슬라이드 너비를 80%로 설정 */
+  opacity: 0.5;
+  /* 비활성 슬라이드는 투명하게 */
   transition: opacity 0.3s;
 }
 
 .bannerSwiper .swiper-slide-active {
-  opacity: 1; /* 활성 슬라이드만 선명하게 */
+  opacity: 1;
+  /* 활성 슬라이드만 선명하게 */
 }
+
 .banner_content {
   position: relative;
   width: 100%;
@@ -682,6 +696,7 @@ header.menu_active .ham_menu {
   opacity: 1;
   background: #00bcd4;
 }
+
 /* ========== Product Section ========== */
 .product {
   width: 100%;
@@ -1204,13 +1219,11 @@ header.menu_active .ham_menu {
 }
 
 .value_main_title .highlight {
-  background: linear-gradient(
-    90deg,
-    var(--main_b) 0%,
-    var(--main_aqua) 37%,
-    #8176f2 70%,
-    var(--main_aqua) 100%
-  );
+  background: linear-gradient(90deg,
+      var(--main_b) 0%,
+      var(--main_aqua) 37%,
+      #8176f2 70%,
+      var(--main_aqua) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -1506,7 +1519,7 @@ header.menu_active .ham_menu {
   position: absolute;
   top: 0;
   left: 0;
-  width: 120%;
+  width: 100%;
   height: 100%;
   object-fit: cover;
   z-index: -1;
